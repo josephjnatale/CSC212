@@ -101,7 +101,7 @@ bool f_perfect(int n) {
 
 int f_rotate(int n, int r) {
 
-	int output, size=log10(n);
+	int output, size=log10(n)+1;
 	int digits[size], movingDigits[r];
 
 	int i=size, temp=n, position=0;
