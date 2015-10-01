@@ -131,14 +131,12 @@ int f_rotate(int n, int r) {
 		printf("\n%i", switchingNumbers[index]);
 	}
 
+	//shifts all remaing number to the right r times
 	for(index=(size-(counter+1)); index>-1; index--) {
 		printf("\nMoving %i where %i was",number[index], number[index+1]);
 		number[index+r]=number[index];
 	}
-
-	number[0]=0;
-	number[1]=0;
-
+	
 	printf("\n");
 
 	for(index=0; index<=size-1; index++) {
