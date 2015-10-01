@@ -100,7 +100,7 @@ int main() {
 			scanf("%s", pattern);
 			printf("\nEnter the text you which to cross check: \n");
 			scanf("%s", text);
-
+			printf("\nCHECK POINT 1\n");
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pattern, text));
 
 		}
