@@ -150,28 +150,21 @@ int main(){
 		//checks all possible number between 1 and 100000 prints only if it is a armstrong number
 		while(a!=100000){
 
-		//for entering your own number	
-		//int input;
-		//scanf("%d", &input);
-		//printf("\nPlease Enter a number: ");
+			//for entering your own number	
+			//int input;
+			//scanf("%d", &input);
+			//printf("\nPlease Enter a number: ");
 
-		
-
-		if(f_armstrong(a))	{
-			printf("\n\n");
-			printf("Is ");
-			printf("%d", a);
-			printf(" a Armstrong number?");
-				
-			printf("\t YES");
+			if(f_armstrong(a))	{
+				printf("\n\n");
+				printf("Is ");
+				printf("%d", a);
+				printf(" a Armstrong number?");
+					
+				printf("\t YES");
+			}
+			a++;
 		}
-		a++;
-	}
-
-	
-
-
-
 	}
 	
 	else if(problemSet==2) {
@@ -189,26 +182,21 @@ int main(){
 
 	}
 
+	else if(problemSet==3) {
+		
+		int test;
+		printf("Perfect number? Check: ");
+		scanf("%i", &test);
 
-	
+		printf("Is %i", test);
+		printf(" a pefect number?");
 
+		if(f_perfect(test))
+			printf("\t YES \n");
 
-
-
-	int test;
-	printf("Perfect number? Check: ");
-	scanf("%i", &test);
-
-	printf("Is %i", test);
-	printf(" a pefect number?");
-
-	if(f_perfect(test))
-		printf("\t YES \n");
-
-	else
-		printf("\t NO \n");
-
-
+		else
+			printf("\t NO \n");
+	}
 
 
 	return 0;
