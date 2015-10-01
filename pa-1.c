@@ -97,9 +97,9 @@ int main() {
 			char pattern[10], text[100];
 
 			printf("\nEnter the pattern: ");
-			scanf("%s", pattern[]);
+			scanf("%s", pattern);
 			printf("\nEnter the text you which to cross check: \n");
-			scanf("%s", text[]);
+			scanf("%s", text);
 
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pattern[], text[]));
 
@@ -117,7 +117,7 @@ int main() {
 
 int f_str_search(char pattern[], char text[]) {
 	
-	printf(strlen(text[]));
+	printf(strlen(text));
 
 }
 int f_rotate(int n, int r) {
