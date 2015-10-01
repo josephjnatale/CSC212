@@ -126,7 +126,7 @@ int f_rotate(int n, int r) {
 	//prints all digits
 	for(int k=0; k<size; k++) {
 
-		printf("|%i",digits[k]);
+		printf("|%i",digits[k-1]);
 	}
 
 
