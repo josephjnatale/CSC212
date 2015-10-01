@@ -119,7 +119,7 @@ int f_rotate(int n, int r) {
 	for(int s=0; s<size/2; s++) {
 
 		switching=digits[size-i];
-		digits[size-i]=digits[i];
+		digits[size-1-i]=digits[i];
 		digits[i]=switching;
 	}
 	printf("\n");
