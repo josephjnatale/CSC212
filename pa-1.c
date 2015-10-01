@@ -109,7 +109,7 @@ int f_rotate(int n, int r) {
 	}
 
 	for(index=0; index<=size; index++) {
-		printf("|%i",number[index++]);
+		printf("|%i",number[index]);
 	}
 
 }
