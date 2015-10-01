@@ -121,7 +121,7 @@ int f_str_search(char pattern[], char text[]) {
 	
 	printf("\ntext length: %i", textLength);
 
-	for(index=0; index<=length; index++) {
+	for(index=0; index<=textLength; index++) {
 		if(text[index]==pattern[0])
 		{
 			for(int k=1; k<=patternLength; k++) {
