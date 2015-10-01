@@ -123,8 +123,8 @@ int f_str_search(char pattern[], char text[]) {
 
 	for(index=0; index<=textLength; index++) {
 		printf("Checking index %i for the character: ",index);
-		pringf("%s", pattern[0]);
-		
+		printf("%s", pattern[0]);
+
 		if(text[index]==pattern[0])
 		{
 			printf("there is a %s at index: %i\nchecking following numbers\n",&pattern[0], index+1);
