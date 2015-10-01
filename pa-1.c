@@ -142,7 +142,7 @@ int main(){
 		//Main test all possible outcomes. 
 		int problemSet;
 
-		printf("1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate");
+		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
 
