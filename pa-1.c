@@ -131,7 +131,7 @@ int f_rotate(int n, int r) {
 		printf("\n%i", switchingNumbers[index]);
 	}
 
-	for(index=(size-(counter+1)); index>0; index--) {
+	for(index=(size-(counter+1)); index>-1; index--) {
 		printf("\nMoving %i where %i was",number[index], number[index+1]);
 		number[index+1]=number[index];
 	}
