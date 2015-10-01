@@ -127,7 +127,7 @@ int f_rotate(int n, int r) {
 	}
 
 	for(index=0; index<=r; index++) {
-		printf("%i", switchingNumbers[index]);
+		printf("\n%i", switchingNumbers[index]);
 	}
 
 	return 666;
