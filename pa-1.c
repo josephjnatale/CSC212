@@ -105,7 +105,7 @@ int f_rotate(int n, int r) {
 
 	for(index=0; index<=size; index++) {
 		number[size-1-index]=temp%10;
-		temp/=10
+		temp/=10;
 	}
 
 	for(index=0; index<=size; index++) {
