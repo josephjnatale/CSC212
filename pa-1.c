@@ -223,7 +223,7 @@ int main(){
 			printf("\nPlease enter r, the number  you wish to rotate by \nr: ");
 			scanf("%i", r);
 
-			printf(f_rotate(n,r));
+			printf("%i", f_rotate(n,r));
 
 		}
 
