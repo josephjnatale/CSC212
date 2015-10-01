@@ -96,7 +96,7 @@ int main(){
 		else if(problemSet==0) 
 			exit=true;
 
-		printf("\n====================================================================================");
+		printf("\n====================================================================================\n");
 	}
 
 	return 0;
@@ -158,7 +158,7 @@ int f_rotate(int n, int r) {
 	int total=0;
 	for(index=0; index<size-1; i++)
 		total = 10 * total + number[index];
-	
+
 	return total;
 
 }
