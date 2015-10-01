@@ -101,56 +101,17 @@ bool f_perfect(int n) {
 
 int f_rotate(int n, int r) {
 
-	int output, size=log10(n)+1;
-	int digits[size], movingDigits[r];
+	int size=floor(log10(abs(n)))+1, number[size], index, temp=n;
 
-	int i=0, temp=n, position=0;
-	while(i<=size) {
-
-		digits[i]=temp%10;
-
-		temp/=10;
-		printf("|%i",digits[i]);
-		i--;
+	for(index=0; index<=size; index++) {
+		number[size-1-index]=temp%10;
+		temp/=10
 	}
 
-	printf("\nNumber of digits: %i", size);
-
-	//prints all digits
-	for(int k=0; k<size; k++) {
-
-		printf("|%i",digits[k]);
-	}
-	
-
-	i=r;
-	while(i>=0) {
-
-		digits[size-i-1]=movingDigits[position];
-
-		position++;
-		i--;
+	for(index=0; index<=size; index++) {
+		printf("|%i",number[index++]);
 	}
 
-	//move digits to the right r times
-
-	for(int j=size-r; j>0; j--) {
-
-		digits[j+r]=digits[j];
-	}
-	for(int q=0; q<r; q++) {
-
-		digits[q]=movingDigits[q];
-	}
-
-	int returnValue=0;
-	
-	for(int p=size; p>0;p--)
-	{
-		returnValue+=(pow(10, p-1)*digits[p-1]);
-	}
-	
-	return returnValue;
 }
 
 
