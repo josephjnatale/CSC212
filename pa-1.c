@@ -147,9 +147,9 @@ int main(){
 		int a=0;
 
 		while(a!=100000){
-		int input;
-		scanf("%d", &input);
-		printf("\nPlease Enter a number: ");
+		//int input;
+		//scanf("%d", &input);
+		//printf("\nPlease Enter a number: ");
 		if(f_armstrong(a)){
 			printf("Is ");
 			printf("\n\n");
