@@ -114,6 +114,21 @@ int f_rotate(int n, int r) {
 		i--;
 	}
 
+	//reverse digit array
+	int temp;
+	for(int s=0; s<size/2; s++) {
+
+		temp=digits[size-i];
+		digits[size-i]=digits[i];
+	}
+
+	//prints all digits
+	for(int k=0; k<size; k++) {
+
+		printf("|%i",digits[k]);
+	}
+
+
 	i=r;
 	while(i>=0) {
 
