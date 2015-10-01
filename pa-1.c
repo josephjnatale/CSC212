@@ -151,8 +151,9 @@ int main(){
 		//scanf("%d", &input);
 		//printf("\nPlease Enter a number: ");
 		if(f_armstrong(a)){
-			printf("Is ");
+			
 			printf("\n\n");
+			printf("Is ");
 			printf("%d", a);
 			printf(" a Armstrong number?");
 			printf("\t YES");
