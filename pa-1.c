@@ -135,8 +135,8 @@ int f_rotate(int n, int r) {
 		number[index+1]=number[index];
 	}
 	
-	for(index=0; index<=r-1; index++) {
-		printf("\n%i", number[index]);
+	for(index=0; index<=size; index++) {
+		printf("| %i", number[index]);
 	}
 	return 666;
 
