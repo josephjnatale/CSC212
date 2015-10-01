@@ -20,7 +20,7 @@ int main() {
 		//Main test all possible outcomes. 
 		int problemSet;
 
-		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate");
+		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
 
@@ -117,11 +117,23 @@ int main() {
 
 int f_str_search(char pattern[], char text[]) {
 	
-	int length=strlen(text);
+	int textLength=strlen(text), patternLength=strlen(pattern), inde, counter=0;
 	
-	printf("%i", length);
+	printf("\ntext length: %i", length);
 
-	return 666;
+	for(index=0; index<=length; index++) {
+		if(text[index]==pattern[0])
+		{
+			for(int k=1; k<=patternLength; k++) {
+				if(text[index+k]!=pattern[k])
+					break;
+
+				counter++;
+			}
+		}
+	}
+
+	return counter;
 }
 int f_rotate(int n, int r) {
 
