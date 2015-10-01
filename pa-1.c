@@ -114,16 +114,20 @@ int f_rotate(int n, int r) {
 		i--;
 	}
 
-	printf("Number of digits: %i", size);
+	printf("\nNumber of digits: %i", size);
+
 	//reverse digit array
 	int switching;
-	for(int s=0; s<size; s++) {
+	int s=0;
+	while(s!=round((float)size/2)+1) {
 
 		switching=digits[s];
 		digits[size-s]=switching;
 		digits[s]=switching;
 		printf("\nswitching %i", switching);
 		printf(" with %i", digits[size-s]);
+
+		s++;
 	}
 	printf("\n");
 
