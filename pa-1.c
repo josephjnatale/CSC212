@@ -101,7 +101,7 @@ bool f_perfect(int n) {
 
 int f_rotate(int n, int r) {
 
-	int size=floor(log10(abs(n)))+1, number[size], index, temp=n;
+	int size=floor(log10(n))+1, number[size], index, temp=n;
 
 	for(index=0; index<=size; index++) {
 		number[size-1-index]=temp%10;
