@@ -104,14 +104,14 @@ int f_rotate(int n, int r) {
 	int output, size=log10(n)+1;
 	int digits[size], movingDigits[r];
 
-	int i=0, temp=n, position=0;
-	while(i<size) {
+	int i=size, temp=n, position=0;
+	while(i>=0) {
 
-		digits[size-1-i]=temp%10;
+		digits[i]=temp%10;
 
 		temp/=10;
 		printf("|%i",digits[i]);
-		i++;
+		i--;
 	}
 
 	i=r;
