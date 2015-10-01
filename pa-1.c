@@ -121,7 +121,7 @@ int f_rotate(int n, int r) {
 		switching=digits[s];
 		digits[size-s]=switching;
 		printf("\nswitching %i", switching);
-		printf(" with %i", digits[s]);
+		printf(" with %i", digits[size-s]);
 		digits[s]=switching;
 	}
 	printf("\n");
