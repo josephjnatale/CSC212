@@ -104,8 +104,8 @@ int f_rotate(int n, int r) {
 	int output, size=log10(n)+1;
 	int digits[size], movingDigits[r];
 
-	int i=size, temp=n, position=0;
-	while(i>=0) {
+	int i=0, temp=n, position=0;
+	while(i<=size) {
 
 		digits[i]=temp%10;
 
@@ -115,21 +115,6 @@ int f_rotate(int n, int r) {
 	}
 
 	printf("\nNumber of digits: %i", size);
-
-	//reverse digit array
-	int switching;
-	int s=0;
-	while(s!=round((float)size/2)) {
-
-		switching=digits[s];
-		digits[size-1-s]=switching;
-		digits[s]=switching;
-		printf("\nswitching %i", switching);
-		printf(" with %i", digits[size-s]);
-
-		s++;
-	}
-	printf("\n");
 
 	//prints all digits
 	for(int k=0; k<size; k++) {
