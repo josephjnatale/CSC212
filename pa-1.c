@@ -108,9 +108,11 @@ int f_rotate(int n, int r) {
 		temp/=10;
 	}
 
-	for(index=0; index<=size; index++) {
+	for(index=0; index<=size-1; index++) {
 		printf("|%i",number[index]);
 	}
+
+	return 666;
 
 }
 
@@ -193,7 +195,7 @@ int main(){
 			printf("\nPlease enter r, the number  you wish to rotate by \nr: ");
 			scanf("%i", &r);
 
-			printf("\nRotated number: %i", f_rotate(n,r));
+			printf("\nResult: %i", f_rotate(n,r));
 
 		}
 
