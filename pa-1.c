@@ -135,6 +135,7 @@ int f_rotate(int n, int r) {
 
 int main(){
 
+	//Main test all possible outcomes. 
 	int problemSet;
 
 	printf("1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate");
@@ -146,44 +147,49 @@ int main(){
 
 		int a=0;
 
+		//checks all possible number between 1 and 100000
 		while(a!=100000){
+
+		//for entering your own number	
 		//int input;
 		//scanf("%d", &input);
 		//printf("\nPlease Enter a number: ");
-		if(f_armstrong(a)){
-			
-			printf("\n\n");
-			printf("Is ");
-			printf("%d", a);
-			printf(" a Armstrong number?");
+
+		printf("\n\n");
+		printf("Is ");
+		printf("%d", a);
+		printf(" a Armstrong number?");
+
+		if(f_armstrong(a))			
 			printf("\t YES");
+		else 
+			printf("\t NO");
+		a++;
 		}
 
-		a++;
+	
+
+
+
+	}
+	
+	else if(problemSet==2) {
+		char e[30];
+		printf("Please enter the string of Brackets you wish to test: ");
+		scanf("%s", e);
+
+		printf("Is  %s",e);
+		printf(" balanced?");
+
+		if(f_brackets(e))
+			printf("\t YES\n");
+		else
+			printf("\t NO\n");
+
 	}
 
 
-	}
-/* Armstrong number test
-
-
-
-
-
-
-
-
-	char e[30];
-	printf("Please enter the string of Brackets you wish to test: ");
-	scanf("%s", e);
-
-	printf("Is  %s",e);
-	printf(" balanced?");
-
-	if(f_brackets(e))
-		printf("\t YES\n");
-	else
-		printf("\t NO\n");
+	
 
 
 
