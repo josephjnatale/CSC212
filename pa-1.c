@@ -122,7 +122,7 @@ int f_rotate(int n, int r) {
 
 	//puts ending r values in switchingNumbers array
 	counter=0;
-	for(index=size-r-1; index<=size; index++) {
+	for(index=size-r; index<=size-1; index++) {
 		switchingNumbers[counter]=number[index];
 		counter++;
 	}
