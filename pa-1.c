@@ -128,11 +128,11 @@ int f_rotate(int n, int r) {
 	printf("\n");
 
 	//prints all digits
-	for(int k=0; k<size+1; k++) {
+	for(int k=0; k<size; k++) {
 
 		printf("|%i",digits[k]);
 	}
-
+	/*
 
 	i=r;
 	while(i>=0) {
@@ -155,7 +155,7 @@ int f_rotate(int n, int r) {
 	}
 
 	int returnValue=0;
-
+	*/
 	for(int p=size; p>0;p--)
 	{
 		returnValue+=(pow(10, p-1)*digits[p-1]);
