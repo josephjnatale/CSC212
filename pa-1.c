@@ -107,7 +107,7 @@ int f_rotate(int n, int r) {
 	int i=0, temp=n, position=0;
 	while(i<size) {
 
-		digits[i]=temp%10;
+		digits[size-1-i]=temp%10;
 
 		temp/=10;
 		printf("|%i",digits[i]);
