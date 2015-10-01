@@ -203,7 +203,7 @@ int main(){
 		}
 
 
-		else if(problemSet=0) 
+		else if(problemSet==0) 
 			exit=true;
 
 	}
