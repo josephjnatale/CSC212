@@ -117,6 +117,7 @@ int main() {
 
 int f_str_search(char pattern[], char text[]) {
 	
+	printf(strlen(text[]));
 
 }
 int f_rotate(int n, int r) {
