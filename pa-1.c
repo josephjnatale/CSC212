@@ -8,9 +8,10 @@ bool f_armstrong(int);
 bool f_brackets(char e[]);
 bool f_perfect(int n);
 int f_rotate(int n, int r);
+int f_str_search(char pattern[], char text[]);
 
 
-int main(){
+int main() {
 
 	bool exit=false;
 
@@ -92,6 +93,18 @@ int main(){
 
 		}
 
+		else if(problemSet==5) {
+			char pattern[10], text[100];
+
+			printf("\nEnter the pattern: ");
+			scanf("%s", pattern[]);
+			printf("\nEnter the text you which to cross check: \n");
+			scanf("%s", text[]);
+
+			printf("\nTimes pattern is shown in text: %i", f_str_search(pattern[], text[]));
+
+		}
+
 
 		else if(problemSet==0) 
 			exit=true;
@@ -102,7 +115,10 @@ int main(){
 	return 0;
 }
 
+int f_str_search(char pattern[], char text[]) {
+	
 
+}
 int f_rotate(int n, int r) {
 
 	int size=floor(log10(n))+1, number[size], index, temp=n, counter;
