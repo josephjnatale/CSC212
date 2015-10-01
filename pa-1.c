@@ -115,11 +115,12 @@ int f_rotate(int n, int r) {
 	}
 
 	//reverse digit array
-	int temp;
+	int switching;
 	for(int s=0; s<size/2; s++) {
 
-		temp=digits[size-i];
+		switching=digits[size-i];
 		digits[size-i]=digits[i];
+		digits[i]=switching;
 	}
 
 	//prints all digits
