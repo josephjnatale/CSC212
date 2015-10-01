@@ -144,7 +144,7 @@ int f_rotate(int n, int r) {
 	}
 
 	//places switchingNumbers into number array
-	for(index=0; index<=r; index++) {
+	for(index=0; index<=r-1; index++) {
 		number[index]=switchingNumbers[index];
 	}
 
