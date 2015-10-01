@@ -219,9 +219,9 @@ int main(){
 			int n, r;
 
 			printf("Please enter n, the number you wish to rotate \nn: ");
-			scanf("%i", n);
+			scanf("%i", &n);
 			printf("\nPlease enter r, the number  you wish to rotate by \nr: ");
-			scanf("%i", r);
+			scanf("%i", &r);
 
 			printf("%i", f_rotate(n,r));
 
