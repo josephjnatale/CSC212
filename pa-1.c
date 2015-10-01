@@ -105,13 +105,13 @@ int f_rotate(int n, int r) {
 	int digits[size], movingDigits[r];
 
 	int i=0, temp=n, position=0;
-	while(i<=size) {
+	while(i<size) {
 
 		digits[i]=temp%10;
 
 		temp/=10;
 		printf("|%i",digits[i]);
-		i--;
+		i++;
 	}
 
 	i=r;
