@@ -104,15 +104,30 @@ int main(){
 
 int f_rotate(int n, int r) {
 
-	int size=floor(log10(n))+1, number[size], index, temp=n;
+	int size=floor(log10(n))+1, number[size], index, temp=n, counter;
 
+	//places each digit into the array
 	for(index=0; index<=size; index++) {
 		number[size-1-index]=temp%10;
 		temp/=10;
 	}
 
+	//prints array
 	for(index=0; index<=size-1; index++) {
 		printf("|%i",number[index]);
+	}
+
+	//creates 2nd array to store ending r values in
+	int switchingNumbers[r];
+
+	//puts ending r values in switchingNumbers array
+	counter=0;
+	for(index=size-r-1; index<=size; index++) {
+		number[index]=switchingNumbers[counter++];
+	}
+
+	for(index=0; index<=r; index++) {
+		printf("%i", switchingNumbers[index]);
 	}
 
 	return 666;
