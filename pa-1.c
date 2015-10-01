@@ -147,7 +147,7 @@ int main(){
 
 		int a=0;
 
-		//checks all possible number between 1 and 100000
+		//checks all possible number between 1 and 100000 prints only if it is a armstrong number
 		while(a!=100000){
 
 		//for entering your own number	
@@ -155,17 +155,18 @@ int main(){
 		//scanf("%d", &input);
 		//printf("\nPlease Enter a number: ");
 
-		printf("\n\n");
-		printf("Is ");
-		printf("%d", a);
-		printf(" a Armstrong number?");
+		
 
-		if(f_armstrong(a))			
+		if(f_armstrong(a))	{
+			printf("\n\n");
+			printf("Is ");
+			printf("%d", a);
+			printf(" a Armstrong number?");
+				
 			printf("\t YES");
-		else 
-			printf("\t NO");
-		a++;
 		}
+		a++;
+	}
 
 	
 
