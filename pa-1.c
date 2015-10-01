@@ -115,7 +115,7 @@ int f_rotate(int n, int r) {
 	}
 
 	//reverse digit array
-	int switching;
+	int switching=digits[0];
 	for(int s=0; s<size/2+1; s++) {
 
 		switching=digits[size-s];
@@ -123,6 +123,7 @@ int f_rotate(int n, int r) {
 		digits[s]=switching;
 	}
 	printf("\n");
+
 	//prints all digits
 	for(int k=0; k<size+1; k++) {
 
