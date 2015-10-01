@@ -156,7 +156,7 @@ int f_rotate(int n, int r) {
 
 	//converts number array to integer
 	int total=0;
-	for(index=0; index<size-1; i++)
+	for(index=0; index<size-1; index++)
 		total = 10 * total + number[index];
 
 	return total;
