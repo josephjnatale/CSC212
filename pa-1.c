@@ -110,7 +110,7 @@ int f_rotate(int n, int r) {
 		digits[i]=temp%10;
 
 		temp/=10;
-
+		printf("|%i",digits[i]);
 		i--;
 	}
 
