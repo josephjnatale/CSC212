@@ -96,7 +96,7 @@ int main(){
 		else if(problemSet==0) 
 			exit=true;
 
-		printf("======================================================================");
+		printf("\n====================================================================================");
 	}
 
 	return 0;
@@ -154,8 +154,12 @@ int f_rotate(int n, int r) {
 		printf("| %i", number[index]);
 	}
 
-
-	return 666;
+	//converts number array to integer
+	int total=0;
+	for(index=0; index<size-1; i++)
+		total = 10 * total + number[index];
+	
+	return total;
 
 }
 
