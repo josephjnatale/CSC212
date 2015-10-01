@@ -124,6 +124,7 @@ int f_str_search(char pattern[], char text[]) {
 	for(index=0; index<=textLength; index++) {
 		if(text[index]==pattern[0])
 		{
+			printf("there is a %s at index: %i\nchecking following numbers\n",pattern[0], index+1);
 			for(int k=1; k<=patternLength; k++) {
 				if(text[index+k]!=pattern[k])
 					break;
