@@ -4,117 +4,10 @@
 #include<time.h>
 #include<string.h>
 
-bool f_armstrong(int n) {
-
-	int  digits=0, number, temp, total=0;
-
-
-	temp=n;
-	while(temp!=0) {
-		digits+=1;
-		temp/=10;
-	}
-
-	temp=n;
-	for(int i =0; i<digits; i++) {
-		number=temp%10;
-		total=total+pow(number, digits);
-		temp/=10;
-	}
-
-
-	if(total==n)
-		return true;
-
-	else
-		return false;
-
-
-
-}
-
-bool f_brackets(char e[]) {
-
-	char leftBracket = '[', rightBracket = ']';
-	int j=0,LBcount=0, RBcount=0, length=strlen(e);
-
-
-	if(length==1)
-		return false;
-
-	while(j != length) {
-
-		if(e[j]==leftBracket)
-			LBcount++;
-		else if(e[j]==rightBracket)
-			RBcount++;
-		else
-			return false;
-
-		j++;
-	}
-
-	if(LBcount== RBcount){
-
-		int midpoint = length/2;
-
-		for(int i=0; i<midpoint; i++) {
-
-			if(e[i]==leftBracket && e[length-i-1]!=rightBracket)
-				return false;
-
-			else if(e[i]==rightBracket && e[length-i-1]!=leftBracket)
-				return false;
-		}
-
-		return true;
-	}
-	else
-		return false;
-
-}
-
-bool f_perfect(int n) {
-
-	int total=0, temp;
-
-	temp=n;
-	printf("\n");
-	while(temp!=0) {
-
-		if(temp<=1)
-			temp=0;
-
-		temp= round((float)temp/2);
-		printf("%i",temp);
-		printf("+");
-		total+=temp;
-
-	}
-	printf("0=%i",total);
-	if(total==n)
-		return true;
-
-	else
-		return false;
-}
-
-int f_rotate(int n, int r) {
-
-	int size=floor(log10(n))+1, number[size], index, temp=n;
-
-	for(index=0; index<=size; index++) {
-		number[size-1-index]=temp%10;
-		temp/=10;
-	}
-
-	for(index=0; index<=size-1; index++) {
-		printf("|%i",number[index]);
-	}
-
-	return 666;
-
-}
+bool f_armstrong(int);
+bool f_brackets(char e[]);
+bool f_perfect(int n);
+int f_rotate(int n, int r);
 
 
 int main(){
@@ -208,4 +101,117 @@ int main(){
 	return 0;
 }
 
+
+int f_rotate(int n, int r) {
+
+	int size=floor(log10(n))+1, number[size], index, temp=n;
+
+	for(index=0; index<=size; index++) {
+		number[size-1-index]=temp%10;
+		temp/=10;
+	}
+
+	for(index=0; index<=size-1; index++) {
+		printf("|%i",number[index]);
+	}
+
+	return 666;
+
+}
+
+bool f_perfect(int n) {
+
+	int total=0, temp;
+
+	temp=n;
+	printf("\n");
+	while(temp!=0) {
+
+		if(temp<=1)
+			temp=0;
+
+		temp= round((float)temp/2);
+		printf("%i",temp);
+		printf("+");
+		total+=temp;
+
+	}
+	printf("0=%i",total);
+	if(total==n)
+		return true;
+
+	else
+		return false;
+}
+
+
+bool f_brackets(char e[]) {
+
+	char leftBracket = '[', rightBracket = ']';
+	int j=0,LBcount=0, RBcount=0, length=strlen(e);
+
+
+	if(length==1)
+		return false;
+
+	while(j != length) {
+
+		if(e[j]==leftBracket)
+			LBcount++;
+		else if(e[j]==rightBracket)
+			RBcount++;
+		else
+			return false;
+
+		j++;
+	}
+
+	if(LBcount== RBcount){
+
+		int midpoint = length/2;
+
+		for(int i=0; i<midpoint; i++) {
+
+			if(e[i]==leftBracket && e[length-i-1]!=rightBracket)
+				return false;
+
+			else if(e[i]==rightBracket && e[length-i-1]!=leftBracket)
+				return false;
+		}
+
+		return true;
+	}
+	else
+		return false;
+
+}
+
+bool f_armstrong(int n) {
+
+	int  digits=0, number, temp, total=0;
+
+
+	temp=n;
+	while(temp!=0) {
+		digits+=1;
+		temp/=10;
+	}
+
+	temp=n;
+	for(int i =0; i<digits; i++) {
+		number=temp%10;
+		total=total+pow(number, digits);
+		temp/=10;
+	}
+
+
+	if(total==n)
+		return true;
+
+	else
+		return false;
+
+
+
+}
 
