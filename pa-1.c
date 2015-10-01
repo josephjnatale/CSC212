@@ -119,7 +119,7 @@ int f_str_search(char pattern[], char text[]) {
 	
 	int length=strlen(text);
 	
-	printf("%i", length;
+	printf("%i", length);
 
 	return 666;
 }
