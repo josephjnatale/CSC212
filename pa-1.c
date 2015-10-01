@@ -207,7 +207,7 @@ int main(){
 	else
 		printf("\t NO \n");
 
-*/
+
 
 
 	return 0;
