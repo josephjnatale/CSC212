@@ -98,13 +98,13 @@ bool f_perfect(int n) {
 	else
 		return false;
 }
-/*
+
 int f_rotate(int n, int r) {
 
 	int output, size=log10(n)+1;
-	int digits[];
+	int digits[size], movingDigits[r];
 
-	int i=size, temp=n;
+	int i=size, temp=n, position=0;
 	while(i>=0) {
 
 		digits[i]=temp%10;
@@ -114,24 +114,36 @@ int f_rotate(int n, int r) {
 		i--;
 	}
 
-	i=size;
-	int shifting=r;
-	i-=shifting;
-	while(i==size) {
+	i=r;
+	while(i>=0) {
 
-		int value=digits[i];
-		for(int k=i; k<0; k--) {
+		digits[size-i-1]=movingDigits[position];
 
-			digits[k]=digits[k-1];
-
-		}
-
-		digits[
-
+		position++;
+		i--;
 	}
 
+	//move digits to the right r times
+
+	for(int j=size-r; j>0; j--) {
+
+		digits[j+r]=digits[j];
+	}
+	for(int q=0; q<r; q++) {
+
+		digits[q]=movingDigits[q];
+	}
+
+	int returnValue=0;
+
+	for(int p=size; p>0;p--)
+	{
+		returnValue+=(pow(10, p-1)*digits[p-1]);
+	}
+	
+	return returnValue;
 }
-*/
+
 
 int main(){
 
@@ -172,6 +184,7 @@ int main(){
 		}
 		
 		else if(problemSet==2) {
+
 			char e[30];
 			printf("Please enter the string of Brackets you wish to test: ");
 			scanf("%s", e);
@@ -200,6 +213,11 @@ int main(){
 
 			else
 				printf("\t NO \n");
+		}
+
+		else if(problemSet==4) {
+
+
 		}
 
 
