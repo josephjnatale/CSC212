@@ -96,6 +96,7 @@ int main(){
 		else if(problemSet==0) 
 			exit=true;
 
+		printf("======================================================================");
 	}
 
 	return 0;
@@ -152,6 +153,8 @@ int f_rotate(int n, int r) {
 	for(index=0; index<=size-1; index++) {
 		printf("| %i", number[index]);
 	}
+
+
 	return 666;
 
 }
