@@ -156,9 +156,9 @@ int main() {
 			printf("\nEnter the first String: ");
 			scanf("%s", s1);
 			printf("\nEnter the second String: ");
-			scanf("%s", s1);
+			scanf("%s", s2);
 
-			//printf("Output: %s", f_strings(s1,s2));
+			printf("Output: %s", f_strings(s1,s2));
 
 		}
 
