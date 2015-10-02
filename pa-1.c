@@ -12,6 +12,8 @@ int f_rotate(int n, int r);
 int f_str_search(char pattern[], char text[]);
 int f_collatz_count(int n);
 int f_array(int n);
+char f_strings(char s1[], char s2[]);
+
 
 int main() {
 
@@ -22,7 +24,7 @@ int main() {
 		//Main test all possible outcomes. 
 		int problemSet;
 
-		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count\n7. f_array\n");
+		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count\n7. f_array\n8. f_strings");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
 		printf("%i", problemSet);
@@ -147,6 +149,19 @@ int main() {
 
 		}
 
+		else if(problemSet==8) {
+			char s1[50],s2[50];
+
+
+			printf("\nEnter the first String: ");
+			scanf("%s", s1);
+			printf("\nEnter the second String: ");
+			scanf("%s", s1);
+
+			printf("Output: %s", f_strings(s1,s2));
+
+		}
+
 
 		else if(problemSet==0) 
 			exit=true;
@@ -157,7 +172,18 @@ int main() {
 	return 0;
 }
 
- int f_array(int n) {
+
+char f_strings(char s1[], char s2[]) {
+
+
+
+
+	return 'p';
+
+}
+
+
+int f_array(int n) {
 
  	int A[n];
 	srand(time(NULL));
