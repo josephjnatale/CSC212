@@ -184,7 +184,7 @@ int main() {
 
  	int B[5], collected=0, i=0;
 
- 	while(collected!=5) {
+ 	while(collected!=4) {
 
  		if(A[i]%3==0){
  			B[collected]=A[i];
