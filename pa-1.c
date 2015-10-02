@@ -188,7 +188,7 @@ int main() {
 
  	while(i<=n-1) {
 
- 		if(A[i]%3==0){
+ 		if(A[i]%3==0 && A[i]!=0){
  			B[collected]=A[i];
  			collected++;
  		}
