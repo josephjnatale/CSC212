@@ -170,7 +170,7 @@ int main() {
  	}
 
  	printf("\n");
- 	for(int l=0; li<=n-1; l++) {
+ 	for(int l=0; l<=n-1; l++) {
 
  		A[l]=A[l]*2;
 
