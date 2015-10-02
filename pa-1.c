@@ -11,7 +11,7 @@ bool f_perfect(int n);
 int f_rotate(int n, int r);
 int f_str_search(char pattern[], char text[]);
 int f_collatz_count(int n);
-
+int f_array(int n);
 
 int main() {
 
