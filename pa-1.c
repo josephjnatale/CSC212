@@ -178,7 +178,7 @@ char f_strings(char s1[], char s2[]) {
 
 
 
-	return 'p';
+	return "p";
 
 }
 
