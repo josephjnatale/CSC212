@@ -10,6 +10,7 @@ bool f_brackets(char e[]);
 bool f_perfect(int n);
 int f_rotate(int n, int r);
 int f_str_search(char pattern[], char text[]);
+int f_collatz_count(int n);
 
 
 int main() {
@@ -95,8 +96,9 @@ int main() {
 
 		}
 
+		//not working
 		else if(problemSet==5) {
-			char input[30];
+			char input;
 
 			printf("\nEnter the pattern: ");
 			scanf("%s", input);
@@ -125,6 +127,16 @@ int main() {
 
 		}
 
+		else if(problemSet==6) {
+
+			int number;
+			printf("\nPlease enter a number n: ");
+			scanf("%i", &number);
+
+			printf("\n\nNumber of iterations needed: %i", f_collatz_count(number));
+
+		}
+
 
 		else if(problemSet==0) 
 			exit=true;
@@ -135,6 +147,27 @@ int main() {
 	return 0;
 }
 
+int f_collatz_count(int n) {
+
+	int iterationCount=0, current_Number=n;
+
+	while(current_Number!=1)
+	{
+		if(current_Number%2==0){
+			current_Number/=2;
+			iterationCount++;
+		}
+		else if(current_Number%2==1) {
+			current_Number= 3*current_Number+1;
+			iterationCount++;
+		}
+	}
+
+	return iterationCount;
+
+}
+
+//not working
 int f_str_search(char pattern[], char text[]) {
 	
 	int textLength=strlen(text), patternLength=strlen(pattern), index, counter=0;
@@ -159,7 +192,9 @@ int f_str_search(char pattern[], char text[]) {
 	}
 
 	return counter;
+
 }
+
 int f_rotate(int n, int r) {
 
 	int size=floor(log10(n))+1, number[size], index, temp=n, counter;
