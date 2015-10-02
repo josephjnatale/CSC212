@@ -168,12 +168,14 @@ int main() {
  		printf("%i |",A[i]);
 
  	}
- 	printf("\n");
- 	for(int i=0; i<=n-1; i++) {
 
- 		A[i]=A[i]*2;
+ 	printf("\n");
+ 	for(int l=0; li<=n-1; l++) {
+
+ 		A[l]=A[l]*2;
 
  	}
+
  	printf("\n");
  	for(int i=0; i<=n-1; i++) {
 
@@ -182,6 +184,7 @@ int main() {
 
  	}
 
+	printf("\n");
  	int B[5], collected=0, i=0;
 
  	while(collected!=4) {
