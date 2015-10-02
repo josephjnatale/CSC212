@@ -196,7 +196,7 @@ int main() {
  	}
  	printf("\nNumber collected: %i\n", collected);
  	int total=0;
- 	while(i<=collected || i<=4)) {
+ 	while(i<=collected || i<=4) {
 
  		total+=B[j];
  		printf("%i + \n", B[j]);
