@@ -207,12 +207,10 @@ int main() {
 	 		i++;
 	 	}
 
- 		total/=5;
-
- 		return total;
+ 		return total/5;
  	}
  	else {
- 		printf("\nonly %i numbers divisible by 3 in the array.", collected);
+ 		printf("\nonly %i numbers divisible by 3 in the array.\n", collected);
 
  		while(i<=collected-1) {
 
@@ -221,7 +219,7 @@ int main() {
 	 		i++;
 	 	}
 
- 		return total;
+ 		return total/collected;
  	}
  }
 
