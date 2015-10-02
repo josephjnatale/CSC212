@@ -179,7 +179,7 @@ int main() {
 
  	while(collected!=5) {
 
- 		if(A[i}%3==0]){
+ 		if(A[i]%3==0]){
  			B[collected]=A[i];
  			collected++;
  		}
@@ -192,7 +192,7 @@ int main() {
  		total+=B[j];
 
  	}
- 	
+
  	total/=5;
 
  	return total;
