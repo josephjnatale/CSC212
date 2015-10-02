@@ -3,6 +3,7 @@
 #include<math.h>
 #include<time.h>
 #include<string.h>
+#include<stdlib.h>
 
 bool f_armstrong(int);
 bool f_brackets(char e[]);
@@ -101,7 +102,12 @@ int main() {
 
 			int patternLength= strlen(input);
 			char pattern[patternLength];
-			free(input);
+			
+			int i =0;
+			while(input[i] !='\0') {
+				input[i]='\0';
+				i++
+			}
 
 
 			printf("\nEnter the text you which to cross check: \n");
@@ -109,8 +115,8 @@ int main() {
 
 			int textLength = strlen(input);
 			char text[textLength];
-			free(input);
 			
+
 			printf("\nCHECK POINT 1\n");
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pattern, text));
 
