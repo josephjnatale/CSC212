@@ -143,7 +143,7 @@ int main() {
 			printf("\nPlease enter a number n: ");
 			scanf("%i", &number);
 
-			
+			printf("\n\nAverage: %i", f_array(number));
 
 		}
 
@@ -168,7 +168,7 @@ int main() {
  		printf("%i |",A[i]);
  	}
 
- 	return 0;
+ 	return 666;
  }
 
 int f_collatz_count(int n) {
