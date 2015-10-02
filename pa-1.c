@@ -97,7 +97,7 @@ int main() {
 		}
 
 		//not working
-		else if(problemSet==5) {
+		/*else if(problemSet==5) {
 			char input;
 
 			printf("\nEnter the pattern: ");
@@ -125,7 +125,7 @@ int main() {
 			printf("\nCHECK POINT 1\n");
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pattern, text));
 
-		}
+		}*/
 
 		else if(problemSet==6) {
 
@@ -168,7 +168,7 @@ int f_collatz_count(int n) {
 }
 
 //not working
-int f_str_search(char pattern[], char text[]) {
+/*int f_str_search(char pattern[], char text[]) {
 	
 	int textLength=strlen(text), patternLength=strlen(pattern), index, counter=0;
 	printf("\npattern= %s", pattern);
@@ -193,7 +193,7 @@ int f_str_search(char pattern[], char text[]) {
 
 	return counter;
 
-}
+}*/
 
 int f_rotate(int n, int r) {
 
