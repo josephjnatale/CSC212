@@ -166,9 +166,36 @@ int main() {
 
  		A[i]=rand()%100;
  		printf("%i |",A[i]);
+
  	}
 
- 	return 666;
+ 	for(int i=0; i<=n-1; i++) {
+
+ 		A[i]*=2;
+
+ 	}
+
+ 	int B[5], collected=0, i=0;
+
+ 	while(collected!=5) {
+
+ 		if(A[i}%3==0]){
+ 			B[collected]=A[i];
+ 			collected++;
+ 		}
+ 		i++;
+ 	}
+
+ 	int total=0;
+ 	for(int j=0; j<=5; j++) {
+
+ 		total+=B[j];
+
+ 	}
+ 	
+ 	total/=5;
+
+ 	return total;
  }
 
 int f_collatz_count(int n) {
