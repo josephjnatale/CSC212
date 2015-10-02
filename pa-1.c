@@ -106,7 +106,7 @@ int main() {
 			int i =0;
 			while(input[i] !='\0') {
 				input[i]='\0';
-				i++
+				i++;
 			}
 
 
