@@ -150,7 +150,7 @@ int main() {
 int f_collatz_count(int n) {
 
 	int iterationCount=0, current_Number=n;
-
+	printf("%i=",n)
 	while(current_Number!=1)
 	{
 		if(current_Number%2==0){
@@ -161,8 +161,10 @@ int f_collatz_count(int n) {
 			current_Number= 3*current_Number+1;
 			iterationCount++;
 		}
+		printf("%i + ", current_Number);
 	}
 
+	printf(" 1");
 	return iterationCount;
 
 }
