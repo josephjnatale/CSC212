@@ -160,7 +160,7 @@ int main() {
  int f_array(int n) {
 
  	int A[n];
-	srand(time(NULL));
+	srand(885);
 
  	for(int i=0; i<=n-1; i++) {
 
