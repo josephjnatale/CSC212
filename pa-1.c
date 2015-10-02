@@ -24,7 +24,7 @@ int main() {
 		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
-		printf("%i", &problemSet)
+		printf("%i", &problemSet);
 
 		if(problemSet==1) {
 		// Armstrong number test
