@@ -159,7 +159,7 @@ int main() {
 
  int f_array(int n) {
 
- 	int A[n];
+ 	int A[n],;
 	srand(885);
 
  	for(int i=0; i<=n-1; i++) {
@@ -170,16 +170,15 @@ int main() {
  	}
 
  	printf("\n");
- 	for(int l=0; l<=n-1; l++) {
+ 	for(int i=0; i<=n-1; i++) {
 
- 		A[l]=A[l]*2;
+ 		A[i]=A[i]*2;
 
  	}
 
  	printf("\n");
  	for(int i=0; i<=n-1; i++) {
 
- 		A[i]=rand()%100;
  		printf("%i |",A[i]);
 
  	}
