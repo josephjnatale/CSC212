@@ -19,7 +19,7 @@ int main() {
 	while(!exit) {
 
 		//Main test all possible outcomes. 
-		int problemSet;
+		int problemSet=-1;
 
 		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
