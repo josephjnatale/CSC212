@@ -201,7 +201,7 @@ int main() {
 
  		total+=B[i];
  		printf("%i + \n", B[i]);
-
+ 		i++;
  	}
 
  	total/=5;
