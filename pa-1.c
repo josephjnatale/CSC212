@@ -22,7 +22,7 @@ int main() {
 		//Main test all possible outcomes. 
 		int problemSet;
 
-		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count");
+		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count\n7. f_array\n");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
 		printf("%i", problemSet);
@@ -137,6 +137,16 @@ int main() {
 
 		}
 
+		else if(problemSet==7) {
+
+			int number;
+			printf("\nPlease enter a number n: ");
+			scanf("%i", &number);
+
+			printf("\n\nAverage: %i", f_array(number));
+
+		}
+
 
 		else if(problemSet==0) 
 			exit=true;
@@ -146,6 +156,19 @@ int main() {
 
 	return 0;
 }
+
+ int f_array(int n) {
+
+ 	int A[n];
+	srand(time(NULL));
+
+ 	for(int i=0; i<=n; i++) {
+
+ 		A[i]=rand()%100;
+ 		printf("%i |",A[i]);
+ 	}
+
+ }
 
 int f_collatz_count(int n) {
 
