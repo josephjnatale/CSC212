@@ -199,7 +199,7 @@ int main() {
  	for(int j=0; j<=5; j++) {
 
  		total+=B[j];
- 		printf("Total: %i\n", total);
+ 		printf("%i + \n", B[j]);
 
  	}
 
