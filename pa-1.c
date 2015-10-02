@@ -194,7 +194,7 @@ int main() {
  		}
  		i++;
  	}
-
+ 	printf("\nNumber collected: %i\n", collected);
  	int total=0;
  	for(int j=0; j<=5; j++) {
 
