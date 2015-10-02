@@ -19,11 +19,11 @@ int main() {
 	while(!exit) {
 
 		//Main test all possible outcomes. 
-		int problemSet=-1;
+		int problemSet;
 
 		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
-		scanf("%i", problemSet);
+		scanf("%i", &problemSet);
 		printf("%i", problemSet);
 
 		if(problemSet==1) {
@@ -96,7 +96,7 @@ int main() {
 		}
 
 		else if(problemSet==5) {
-			char input[100];
+			char input[30];
 
 			printf("\nEnter the pattern: ");
 			scanf("%s", input);
@@ -104,6 +104,8 @@ int main() {
 			int patternLength= strlen(input);
 			char pattern[patternLength];
 			
+
+			printf("\nFirst character of input: %s", input[0]);
 			int i =0;
 			while(input[i] !='\0') {
 				input[i]='\0';
