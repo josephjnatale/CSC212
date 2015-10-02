@@ -168,6 +168,7 @@ int main() {
  		printf("%i |",A[i]);
  	}
 
+ 	return 0;
  }
 
 int f_collatz_count(int n) {
