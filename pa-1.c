@@ -203,7 +203,7 @@ int main() {
 	 	while(i<=4) {
 
 	 		total+=B[i];
-	 		printf("%i + \n", B[i]);
+	 		printf("%i + ", B[i]);
 	 		i++;
 	 	}
 
@@ -214,7 +214,14 @@ int main() {
  	else {
  		printf("\nonly %i numbers divisible by 3 in the array.", collected);
 
- 		return 000;
+ 		while(i<=collected-1) {
+
+	 		total+=B[i];
+	 		printf("%i + ", B[i]);
+	 		i++;
+	 	}
+
+ 		return total;
  	}
  }
 
