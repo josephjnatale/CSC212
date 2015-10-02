@@ -186,7 +186,7 @@ int main() {
 	printf("\n");
  	int B[5], collected=0, i=0;
 
- 	while(i<=n) {
+ 	while(i<=n-1) {
 
  		if(A[i]%3==0){
  			B[collected]=A[i];
