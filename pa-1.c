@@ -162,7 +162,7 @@ int main() {
  	int A[n];
 	srand(time(NULL));
 
- 	for(int i=0; i<=n; i++) {
+ 	for(int i=0; i<=n-1; i++) {
 
  		A[i]=rand()%100;
  		printf("%i |",A[i]);
