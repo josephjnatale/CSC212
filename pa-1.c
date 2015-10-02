@@ -212,7 +212,7 @@ int main() {
  		return total;
  	}
  	else {
- 		printf("\nonly %i numbers divisible by 3 in the array.")
+ 		printf("\nonly %i numbers divisible by 3 in the array.");
 
  		return 000;
  	}
