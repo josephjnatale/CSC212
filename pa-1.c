@@ -143,7 +143,7 @@ int main() {
 			printf("\nPlease enter a number n: ");
 			scanf("%i", &number);
 
-			printf("\n\nAverage: %i", f_array(number));
+			
 
 		}
 
