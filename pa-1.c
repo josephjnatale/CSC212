@@ -197,16 +197,25 @@ int main() {
  	printf("\nNumber collected: %i\n", collected);
  	int total=0;
  	i=0;
- 	while(i<=collected || i<=4) {
 
- 		total+=B[i];
- 		printf("%i + \n", B[i]);
- 		i++;
+ 	if(collected>=5) {
+
+	 	while(i<=4) {
+
+	 		total+=B[i];
+	 		printf("%i + \n", B[i]);
+	 		i++;
+	 	}
+
+ 		total/=5;
+
+ 		return total;
  	}
+ 	else {
+ 		printf("\nonly %i numbers divisible by 3 in the array.")
 
- 	total/=5;
-
- 	return total;
+ 		return 000;
+ 	}
  }
 
 int f_collatz_count(int n) {
