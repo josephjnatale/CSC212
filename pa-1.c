@@ -22,7 +22,7 @@ int main() {
 		//Main test all possible outcomes. 
 		int problemSet;
 
-		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search");
+		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
 		printf("%i", problemSet);
@@ -151,7 +151,7 @@ int f_collatz_count(int n) {
 
 	int iterationCount=0, current_Number=n;
 	printf("%i=",n);
-	
+
 	while(current_Number!=1)
 	{
 		if(current_Number%2==0){
@@ -165,7 +165,7 @@ int f_collatz_count(int n) {
 		printf("%i + ", current_Number);
 	}
 
-	printf(" 1");
+	printf("0");
 	return iterationCount;
 
 }
