@@ -13,6 +13,7 @@ int f_str_search(char pattern[], char text[]);
 int f_collatz_count(int n);
 int f_array(int n);
 char f_strings(char s1[], char s2[]);
+int f_sort (int x, int y, int z);
 
 
 int main() {
