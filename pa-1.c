@@ -158,7 +158,21 @@ int main() {
 			printf("\nEnter the second String: ");
 			scanf("%s", s2);
 
-			printf("%s", f_strings(s1[],s2[]));
+			printf("%s", f_strings(s1,s2));
+
+		}
+
+		else if(problemSet=9) {
+
+			int n1, n2, n3;
+			printf("Please enter three numbers you wish to sort.\nFirst number: ");
+			scanf("%i", n1);
+			prinf("\nSecond number: ");
+			scanf("%i", n2);
+			prinf("\nThird number: ");
+			scanf("%i", n3);
+
+			prinf("\n\n %i", f_sort(n1,n2,n3));
 
 		}
 
@@ -170,6 +184,51 @@ int main() {
 	}
 
 	return 0;
+}
+
+int f_sort (int x, int y, int z) {
+
+	int list[3];
+	if(x>y && x>z) {
+		list[0]=x;
+
+		if(y>z) {
+			list[1]=y;
+			list[2]=z;
+		}
+		else {
+			list[1]=z;
+			list[2]=y;
+		}
+	}
+
+	if(y>x && y>z) {
+		list[0]=y;
+
+		if(x>z) {
+			list[1]=x;
+			list[2]=z;
+		}
+		else {
+			list[1]=z;
+			list[2]=x;
+		}
+	}
+
+	if(z>x && z>y) {
+		list[0]=z;
+
+		if(x>y) {
+			list[1]=x;
+			list[2]=y;
+		}
+		else {
+			list[1]=y;
+			list[2]=x;
+		}
+	}
+
+	return list;
 }
 
 
