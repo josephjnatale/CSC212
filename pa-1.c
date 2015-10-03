@@ -158,7 +158,7 @@ int main() {
 			printf("\nEnter the second String: ");
 			scanf("%s", s2);
 
-			printf("%s", f_strings(s1,s2));
+			//printf("%s", f_strings(s1,s2));
 
 		}
 
@@ -166,11 +166,11 @@ int main() {
 
 			int n1, n2, n3;
 			printf("Please enter three numbers you wish to sort.\nFirst number: ");
-			scanf("%i", n1);
-			prinf("\nSecond number: ");
-			scanf("%i", n2);
-			prinf("\nThird number: ");
-			scanf("%i", n3);
+			scanf("%i", &n1);
+			printf("\nSecond number: ");
+			scanf("%i", &n2);
+			printf("\nThird number: ");
+			scanf("%i", &n3);
 
 			prinf("\n\n %i", f_sort(n1,n2,n3));
 
