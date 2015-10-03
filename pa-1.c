@@ -173,7 +173,7 @@ int main() {
 			printf("\nThird number: ");
 			scanf("%i", &n3);
 
-			printf("\n\n %i", f_sort(n1,n2,n3));
+			printf("\n\n %d", f_sort(n1,n2,n3));
 
 		}
 
