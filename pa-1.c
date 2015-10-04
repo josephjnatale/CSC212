@@ -173,12 +173,12 @@ int main() {
 			printf("\nThird number: ");
 			scanf("%i", &n3);
 
-			int sorted[3];
+			int sorted[];
 			sorted=f_sort(n1,n2,n3);
 			printf("\n");
 			
 			for(int i=0; i<=3; i++) {
-				printf("%d ,", list[i]);
+				printf("%d ,", sorted[i]);
 			}
 
 		}
