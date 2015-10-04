@@ -168,7 +168,17 @@ int main() {
 			for(int i=0; i<=3; i++) {
 				printf("%d ,", sorted[i]);
 			}
-			*/
+			*/9
+		}
+
+		else if(problemSet==10) {
+
+			int  input;
+			printf("Please enter a number: ");
+			scanf("%d", &input);
+
+			f_cubes_sum(input);
+
 		}
 
 
@@ -180,6 +190,29 @@ int main() {
 
 	return 0;
 }
+
+int f_cubes_sum (int n) {
+
+	int a=0, b=0;
+	bool comboFound=false;
+
+
+	for(int i=0; i<=1000; i++) {
+
+		for(int j=0; j<=1000; j++) {
+			printf("Does %d^3 + %d^3= &d", i,j,n);
+			if(pow(i,3)+pow(j,3)!=n)
+				printf("YES!!!");
+		}
+			
+			
+
+
+	}
+
+	return 0;
+}
+
 
 //not working
 /*
