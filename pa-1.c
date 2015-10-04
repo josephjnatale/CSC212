@@ -177,7 +177,7 @@ int main() {
 			printf("Please enter a number: ");
 			scanf("%d", &input);
 
-			printf("Numbers that work: %d", f_cubes_sum(input);
+			printf("Numbers that work: %d", f_cubes_sum(input));
 
 		}
 
