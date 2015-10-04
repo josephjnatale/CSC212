@@ -14,7 +14,7 @@ int f_collatz_count(int n);
 int f_array(int n);
 char f_strings(char s1[], char s2[]);
 int f_sort (int x, int y, int z);
-
+int f_cubes_sum (int n);
 
 int main() {
 
