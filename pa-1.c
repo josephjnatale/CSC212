@@ -251,7 +251,7 @@ char f_strings(char s1[], char s2[]) {
 
 		char output[2*s2Length +s1Length];
 
-		int j=0. k=0. l=0;
+		int j=0, k=0, l=0;
 		for(j=0; j<s1Length; j++) 
 			output[j]=s2[j];
 
