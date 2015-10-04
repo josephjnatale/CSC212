@@ -202,7 +202,7 @@ int f_cubes_sum (int n) {
 		for(int j=0; j<=1000; j++) {
 			printf("Does %d^3 + %d^3= &d", i,j,n);
 			if(pow(i,3)+pow(j,3)!=n)
-				printf("YES!!!");
+				printf("YES!!!\n");
 		}
 			
 			
