@@ -168,7 +168,7 @@ int main() {
 			for(int i=0; i<=3; i++) {
 				printf("%d ,", sorted[i]);
 			}
-			*/9
+			*/
 		}
 
 		else if(problemSet==10) {
