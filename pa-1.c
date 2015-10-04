@@ -264,7 +264,7 @@ char f_strings(char s1[], char s2[]) {
 		for(l=0; l<s1Length; l++) 
 			output[j+k+l] = s2[l];
 
-		return output;
+		return &output;
 	}
 
 
