@@ -226,7 +226,7 @@ int f_sort (int x, int y, int z) {
 		printf("%d, ", list[i]);
 	}
 
-	return (int)list;
+	return &list;
 }
 
 
