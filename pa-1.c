@@ -180,6 +180,8 @@ int main() {
 	return 0;
 }
 
+//not working
+/*
 int f_sort (int x, int y, int z) {
 
 	static int list[3];
@@ -228,8 +230,10 @@ int f_sort (int x, int y, int z) {
 
 	return &list;
 }
+*/
 
-
+//not working
+/*
 char f_strings(char s1[], char s2[]) {
 	int s1Length= strlen(s1), s2Length=strlen(s2);
 
@@ -266,12 +270,8 @@ char f_strings(char s1[], char s2[]) {
 
 		return &output;
 	}
-
-
-	
-
 }
-
+*/
 
 int f_array(int n) {
 
