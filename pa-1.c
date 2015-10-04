@@ -177,7 +177,7 @@ int main() {
 			printf("Please enter a number: ");
 			scanf("%d", &input);
 
-			f_cubes_sum(input);
+			printf("Numbers that work: %d", f_cubes_sum(input);
 
 		}
 
@@ -210,6 +210,8 @@ int f_cubes_sum (int n) {
 			}
 
 			printf("\tNo %d", (int)(pow(i,3)+pow(j,3)));
+			if(pow(i,3)+pow(j,3)>n)
+				return NULL;
 		}
 			
 		if(comboFound)
