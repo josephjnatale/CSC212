@@ -209,7 +209,7 @@ int f_cubes_sum (int n) {
 				break;
 			}
 
-			printf("\tNo %d", (int)(pow(i,3)+pow(j,3));
+			printf("\tNo %d", (int)(pow(i,3)+pow(j,3)));
 		}
 			
 		if(comboFound)
