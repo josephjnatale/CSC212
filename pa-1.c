@@ -187,7 +187,7 @@ int main() {
 	return 0;
 }
 
-int f_sort (int x, int y, int z) {
+int *f_sort (int x, int y, int z) {
 
 	static int list[3];
 	if(x>y && x>z) {
