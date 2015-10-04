@@ -100,6 +100,7 @@ int main() {
 		}
 
 		//not working
+		/*
 		else if(problemSet==5) {
 			char pattern[10], text[50];
 
@@ -112,7 +113,8 @@ int main() {
 			printf("\nTimes pattern is shown in text: %i", f_str_search(*pattern, *text));
 
 		}
-
+		*/
+		
 		else if(problemSet==6) {
 
 			int number;
