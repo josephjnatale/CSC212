@@ -100,35 +100,18 @@ int main() {
 		}
 
 		//not working
-		/*else if(problemSet==5) {
-			char input;
+		else if(problemSet==5) {
+			char pattern[10], text[50];
 
 			printf("\nEnter the pattern: ");
-			scanf("%s", input);
-
-			int patternLength= strlen(input);
-			char pattern[patternLength];
-			
-
-			printf("\nFirst character of input: %s", input[0]);
-			int i =0;
-			while(input[i] !='\0') {
-				input[i]='\0';
-				i++;
-			}
-
+			scanf("%s", *pattern);
 
 			printf("\nEnter the text you which to cross check: \n");
-			scanf("%s", input);
+			scanf("%s", *text);
 
-			int textLength = strlen(input);
-			char text[textLength];
-			
+			printf("\nTimes pattern is shown in text: %i", f_str_search(*pattern, *text));
 
-			printf("\nCHECK POINT 1\n");
-			printf("\nTimes pattern is shown in text: %i", f_str_search(pattern, text));
-
-		}*/
+		}
 
 		else if(problemSet==6) {
 
@@ -247,15 +230,42 @@ int f_sort (int x, int y, int z) {
 char f_strings(char s1[], char s2[]) {
 	int s1Length= strlen(s1), s2Length=strlen(s2);
 
-	if(s1Length>s2Length) {
+	if(s1Length<s2Length) {
 
 		char output[2*s1Length +s2Length];
 
-		for(int i=0; i<s1)
+		int j=0. k=0. l=0;
+		for(j=0; j<s1Length; j++) 
+			output[j]=s1[j];
+
+		for(k=0; k<s2Length; k++) 
+			output[j+k] = s2[k];
+		
+		for(l=0; l<s1Length; l++) 
+			output[j+k+l] = s1[l];
+
+		return output;
+	}
+
+	else {
+
+		char output[2*s2Length +s1Length];
+
+		int j=0. k=0. l=0;
+		for(j=0; j<s1Length; j++) 
+			output[j]=s2[j];
+
+		for(k=0; k<s2Length; k++) 
+			output[j+k] = s1[k];
+		
+		for(l=0; l<s1Length; l++) 
+			output[j+k+l] = s2[l];
+
+		return output;
 	}
 
 
-	//return s1;
+	
 
 }
 
