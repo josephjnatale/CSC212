@@ -174,7 +174,7 @@ int main() {
 			scanf("%i", &n3);
 
 			int sorted[3];
-			
+
 			sorted=f_sort(n1,n2,n3);
 
 			printf("\n");
@@ -243,21 +243,22 @@ int f_sort (int x, int y, int z) {
 	return list;
 }
 
-/*
+
 char f_strings(char s1[], char s2[]) {
+	int s1Length= strlen(s1), s2Length=strlen(s2);
 
-	if(strlen(st)>strlen(s2)) {
+	if(s1Length>s2Length) {
 
-		char output[2*strlen(s1) +strlen(s2)];
+		char output[2*s1Length +s2Length];
 
-		for(int i=0; i<)
+		for(int i=0; i<s1)
 	}
 
 
 	//return s1;
 
 }
-*/
+
 
 int f_array(int n) {
 
