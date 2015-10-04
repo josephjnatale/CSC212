@@ -114,7 +114,7 @@ int main() {
 
 		}
 		*/
-		
+
 		else if(problemSet==6) {
 
 			int number;
@@ -225,7 +225,8 @@ int f_sort (int x, int y, int z) {
 	for(int i=0; i<=3; i++) {
 		printf("%d, ", list[i]);
 	}
-	return list;
+
+	return (int)list;
 }
 
 
