@@ -208,6 +208,8 @@ int f_cubes_sum (int n) {
 				comboFound=true;
 				break;
 			}
+
+			printf("\tNo %d", pow(i,3)+pow(j,3));
 		}
 			
 		if(comboFound)
