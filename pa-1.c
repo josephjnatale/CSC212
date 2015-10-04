@@ -234,19 +234,27 @@ int f_sort (int x, int y, int z) {
 		}
 	}
 
+	for(int i=0; i<=3; i++) {
+		printf("%d, ", list[i]);
+	}
 	return list;
 }
 
-
+/*
 char f_strings(char s1[], char s2[]) {
 
+	if(strlen(st)>strlen(s2)) {
 
+		char output[2*strlen(s1) +strlen(s2)];
+
+		for(int i=0; i<)
+	}
 
 
 	//return s1;
 
 }
-
+*/
 
 int f_array(int n) {
 
