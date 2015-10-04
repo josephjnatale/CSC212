@@ -148,7 +148,7 @@ int main() {
 
 		}
 
-		else if(problemSet=9) {
+		else if(problemSet==9) {
 
 			int n1, n2, n3;
 			printf("Please enter three numbers you wish to sort.\nFirst number: ");
