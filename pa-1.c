@@ -140,13 +140,14 @@ int main() {
 		else if(problemSet==8) {
 			char s1[50],s2[50],s3[150];
 
-			int *p1=s1, *p2=s2, *p3=s3;
+			
 
 			printf("\nEnter the first String: ");
 			scanf("%s", s1);
 			printf("\nEnter the second String: ");
 			scanf("%s", s2);
-
+			
+			char *p1=s1, *p2=s2, *p3=s3;
 			f_strings(p1,p2,p3);
 
 			printf("\n\n%s", s3);
