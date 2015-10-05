@@ -59,7 +59,7 @@ int main() {
 		else if(problemSet==2) {
 
 			char e[30];
-			int *p =&e;
+			char *p =&e;
 			printf("Please enter the string of Brackets you wish to test: ");
 			scanf("%s", e);
 
