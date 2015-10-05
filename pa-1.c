@@ -464,6 +464,8 @@ int f_rotate(int n, int r) {
 
 	int size=floor(log10(n))+1, number[size], index, temp=n, counter;
 
+	if(r>=size)
+		r%=size;
 	//places each digit into the array
 	for(index=0; index<=size; index++) {
 		number[size-1-index]=temp%10;
