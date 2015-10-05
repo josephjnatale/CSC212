@@ -532,12 +532,12 @@ bool f_perfect(int n) {
 			temp=0;
 
 		temp= round((float)temp/2);
-		printf("%i",temp);
-		printf("+");
+		//printf("%i",temp);
+		//printf("+");
 		total+=temp;
 
 	}
-	printf("0=%i",total);
+	//printf("0=%i",total);
 	if(total==n)
 		return true;
 
