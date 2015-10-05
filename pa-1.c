@@ -178,8 +178,9 @@ int main() {
 			int  input;
 			printf("Please enter a number: ");
 			scanf("%d", &input);
+			int *p=f_cubes_sum(input);
 
-			printf("Numbers that work: %d", f_cubes_sum(input));
+			printf("Numbers that work: %d , %d", p[0], p[1]);
 
 		}
 
