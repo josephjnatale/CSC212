@@ -6,15 +6,15 @@
 #include<stdlib.h>
 
 bool f_armstrong(int);
-bool f_brackets(char e[]);
+bool f_brackets(char *e);
 bool f_perfect(int n);
 int f_rotate(int n, int r);
-int f_str_search(char pattern[], char text[]);
+int f_str_search(char *pattern, char *text);
 int f_collatz_count(int n);
-int f_array(int n);
-char f_strings(char s1[], char s2[]);
-int f_sort (int x, int y, int z);
-
+float f_array(int n);
+void f_strings(char *s1, char *s2, char *s3);
+void f_sort (int x, int y, int z);
+int *f_cubes_sum(int n);
 
 int main() {
 
@@ -64,7 +64,7 @@ int main() {
 			printf("Is  %s",e);
 			printf(" balanced?");
 
-			if(f_brackets(e))
+			if(f_brackets(*e))
 				printf("\t YES\n");
 			else
 				printf("\t NO\n");
@@ -195,6 +195,10 @@ int main() {
 	return 0;
 }
 
+int *f_cubes_sum(int n) {
+
+}
+
 int f_sort (int x, int y, int z) {
 
 	static int list[3];
@@ -243,8 +247,7 @@ int f_sort (int x, int y, int z) {
 	return list;
 }
 
-
-char f_strings(char s1[], char s2[]) {
+char f_strings(char *s1, char *s2, char *s3) {
 	int s1Length= strlen(s1), s2Length=strlen(s2);
 
 	if(s1Length>s2Length) {
@@ -258,7 +261,6 @@ char f_strings(char s1[], char s2[]) {
 	//return s1;
 
 }
-
 
 int f_array(int n) {
 
@@ -324,6 +326,7 @@ int f_array(int n) {
 
  		return total/collected;
  	}
+
  }
 
 int f_collatz_count(int n) {
@@ -349,8 +352,8 @@ int f_collatz_count(int n) {
 
 }
 
-//not working
-/*int f_str_search(char pattern[], char text[]) {
+
+int f_str_search(char *pattern, char *text) {
 	
 	int textLength=strlen(text), patternLength=strlen(pattern), index, counter=0;
 	printf("\npattern= %s", pattern);
@@ -375,7 +378,7 @@ int f_collatz_count(int n) {
 
 	return counter;
 
-}*/
+}
 
 int f_rotate(int n, int r) {
 
@@ -463,7 +466,7 @@ bool f_perfect(int n) {
 }
 
 
-bool f_brackets(char e[]) {
+bool f_brackets(char *e) {
 
 	char leftBracket = '[', rightBracket = ']';
 	int j=0,LBcount=0, RBcount=0, length=strlen(e);
