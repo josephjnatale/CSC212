@@ -325,7 +325,7 @@ void f_strings(char *s1, char *s2, char *s3) {
 
 }
 
-int f_array(int n) {
+float f_array(int n) {
 
  	int A[n];
 	srand(time(NULL));
@@ -363,7 +363,7 @@ int f_array(int n) {
  		i++;
  	}
  	printf("\nNumber collected: %i\n", collected);
- 	int total=0;
+ 	float total=0;
  	i=0;
 
  	if(collected>=5) {
