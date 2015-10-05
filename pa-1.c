@@ -133,7 +133,7 @@ int main() {
 			printf("\nPlease enter a number n: ");
 			scanf("%i", &number);
 
-			printf("\n\nAverage: %i", f_array(number));
+			printf("\n\nAverage: %f", f_array(number));
 
 		}
 
