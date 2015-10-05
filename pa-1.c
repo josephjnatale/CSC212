@@ -120,14 +120,14 @@ int main() {
 
 		
 		else if(problemSet==5) {
-			char pattern[10], text[50];
+			char pattern[10]={0}, text[50]{0};
 			char *pPattern=pattern, *pText=text;
 
 			printf("\nEnter the pattern: ");
-			scanf("%s", pattern);
+			scanf("%[^\t\n]s", pattern);
 
 			printf("\nEnter the text you which to cross check: \n");
-			scanf("%s", text);
+			scanf("%[^\t\n]s", text);
 
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
