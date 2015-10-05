@@ -161,8 +161,10 @@ int main() {
 			scanf("%i", &n3);
 
 			int sorted[3]={0};
+			int *pointer=&sorted;
 
-			f_sort(n1,n2,n3, &sorted);
+
+			f_sort(n1,n2,n3, pointer);
 
 			for(int i=0; i<=3; i++)
 				printf("%d", sorted[i]);
