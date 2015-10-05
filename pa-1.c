@@ -195,7 +195,7 @@ int main() {
 
 int f_cubes_sum (int n) {
 
-	int a=0, b=0;
+	int numbers[2]={0}, *p;
 	bool comboFound=false;
 
 
@@ -208,20 +208,24 @@ int f_cubes_sum (int n) {
 			if(pow(i,3)+pow(j,3)==n) {
 				printf("YES!!!");
 				comboFound=true;
+				numbers[0]=i;
+				numbers[1]=j;
 				break;
 			}
 
 			printf("\tNo %d", (int)(pow(i,3)+pow(j,3)));
-			if(pow(i,3)+pow(j,3)>n)
-				return NULL;
+			if(pow(i,3)+pow(j,3)>n){
+				p=NULL;
+				return p;
+			}
 		}
 			
 		if(comboFound)
 			break;	
 
 	}
-
-	return 0;
+	p=numbers;
+	return p;
 }
 
 
