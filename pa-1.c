@@ -29,7 +29,6 @@ int main() {
 		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count\n7. f_array\n8. f_strings\n9. f_sort\n10. f_cubes_sum\n");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
-		printf("%i", problemSet);
 
 		if(problemSet==1) {
 		// Armstrong number test
@@ -76,17 +75,35 @@ int main() {
 		else if(problemSet==3) {
 			
 			int test;
-			printf("Perfect number? Check: ");
-			scanf("%i", &test);
+			//printf("Perfect number? Check: ");
+			//scanf("%i", &test);
 
-			printf("Is %i", test);
-			printf(" a pefect number?");
+			while(test!=100000){
 
-			if(f_perfect(test))
-				printf("\t YES \n");
+				//for entering your own number	
+				//int input;
+				//scanf("%d", &input);
+				//printf("\nPlease Enter a number: ");
 
-			else
-				printf("\t NO \n");
+				if(f_brackets(test))	{
+					printf("\n\n");
+					printf("Is %i", test);
+					printf(" a pefect number?");
+						
+					printf("\t YES");
+				}
+				test++;
+			}	
+
+
+			
+			
+
+			// if(f_perfect(test))
+			// 	printf("\t YES \n");
+
+			// else
+			// 	printf("\t NO \n");
 		}
 
 		else if(problemSet==4) {
