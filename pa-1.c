@@ -85,7 +85,7 @@ int main() {
 				//scanf("%d", &input);
 				//printf("\nPlease Enter a number: ");
 
-				if(f_brackets(test))	{
+				if(f_perfect(test))	{
 					printf("\n\n");
 					printf("Is %i", test);
 					printf(" a pefect number?");
