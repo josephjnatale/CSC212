@@ -275,9 +275,9 @@ void f_sort (int x, int y, int z, int *numbers) {
 		printf("%d, ", list[i]);
 	}
 
-	*numebrs[0]=list[0];
-	*numebrs[1]=list[1];
-	*numebrs[2]=list[2];
+	*(p)=list[0];
+	*(p+1)=list[1];
+	*(p+2)=list[2];
 }
 
 
