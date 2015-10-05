@@ -26,7 +26,7 @@ int main() {
 		//Main test all possible outcomes. 
 		int problemSet;
 
-		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count\n7. f_array\n8. f_strings");
+		printf("\n\n1. f_armstrong\n2. f_bracket\n3. f_perfect\n4. f_rotate\n5. f_str_search\n6. f_collatz_count\n7. f_array\n8. f_strings\n9. f_sort\n10. f_cubes_sum\n");
 		printf("\n\nPlease enter the problem wish to test [enter 0 to exit]: ");
 		scanf("%i", &problemSet);
 		printf("%i", problemSet);
