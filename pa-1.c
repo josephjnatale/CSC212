@@ -13,7 +13,7 @@ int f_str_search(char *pattern, char *text);
 int f_collatz_count(int n);
 float f_array(int n);
 void f_strings(char *s1, char *s2, char *s3);
-void f_sort (int x, int y, int z);
+void f_sort (int x, int y, int z, int *list);
 int *f_cubes_sum(int n);
 
 
@@ -160,17 +160,13 @@ int main() {
 			printf("\nThird number: ");
 			scanf("%i", &n3);
 
-			int sorted[3];
+			int sorted[3]={0};
 
-			/*
-			sorted=f_sort(n1,n2,n3);
+			f_sort(n1,n2,n3, &sorted);
 
-			printf("\n");
-			
-			for(int i=0; i<=3; i++) {
-				printf("%d ,", sorted[i]);
-			}
-			*/
+			for(int i=0; i<=3; i++)
+				printf("%d", sorted[i]);
+
 		}
 
 		else if(problemSet==10) {
@@ -231,7 +227,7 @@ int *f_cubes_sum (int n) {
 
 
 //not working
-int f_sort (int x, int y, int z) {
+void f_sort (int x, int y, int z, int *numbers) {
 
 	static int list[3];
 	if(x>y && x>z) {
@@ -277,7 +273,9 @@ int f_sort (int x, int y, int z) {
 		printf("%d, ", list[i]);
 	}
 
-	return &list;
+	*numebrs[0]=list[0];
+	*numebrs[1]=list[1];
+	*numebrs[2]=list[2];
 }
 
 
