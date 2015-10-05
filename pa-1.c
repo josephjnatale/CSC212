@@ -59,13 +59,14 @@ int main() {
 		else if(problemSet==2) {
 
 			char e[30];
+			int *p =&e;
 			printf("Please enter the string of Brackets you wish to test: ");
 			scanf("%s", e);
 
 			printf("Is  %s",e);
 			printf(" balanced?");
 
-			if(f_brackets(&e))
+			if(f_brackets(p))
 				printf("\t YES\n");
 			else
 				printf("\t NO\n");
