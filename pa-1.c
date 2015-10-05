@@ -194,7 +194,7 @@ int main() {
 	return 0;
 }
 
-int f_cubes_sum (int n) {
+int *f_cubes_sum (int n) {
 
 	int numbers[2]={0}, *p;
 	bool comboFound=false;
