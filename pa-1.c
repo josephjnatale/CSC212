@@ -373,7 +373,7 @@ float f_array(int n) {
 
  	while(i<=n-1) {
 
- 		if(A[i]%3==0 && A[i]!=0){
+ 		if(A[i]%3==0 && A[i]!=0 && collected<6){
  			B[collected]=A[i];
  			collected++;
  		}
