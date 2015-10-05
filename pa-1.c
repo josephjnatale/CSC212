@@ -138,16 +138,18 @@ int main() {
 		}
 
 		else if(problemSet==8) {
-			char s1[50],s2[50];
+			char s1[50],s2[50],s3[150];
 
+			int *p1=s1, *p2=s2, *p3=s3;
 
 			printf("\nEnter the first String: ");
 			scanf("%s", s1);
 			printf("\nEnter the second String: ");
 			scanf("%s", s2);
 
-			//printf("%s", f_strings(s1,s2));
+			f_strings(p1,p2,p3);
 
+			printf("\n\n%s", s3);
 		}
 
 		else if(problemSet==9) {
@@ -228,7 +230,7 @@ int *f_cubes_sum (int n) {
 }
 
 
-//not working
+
 void f_sort (int x, int y, int z, int *numbers) {
 
 	static int list[3];
@@ -281,8 +283,8 @@ void f_sort (int x, int y, int z, int *numbers) {
 }
 
 
-//not working
-char f_strings(char *s1, char *s2, char *s3) {
+
+void f_strings(char *s1, char *s2, char *s3) {
 	int s1Length= strlen(s1), s2Length=strlen(s2);
 
 	if(s1Length<s2Length) {
@@ -299,7 +301,6 @@ char f_strings(char *s1, char *s2, char *s3) {
 		for(l=0; l<s1Length; l++) 
 			output[j+k+l] = s1[l];
 
-		return &output;
 	}
 
 	else {
@@ -315,10 +316,9 @@ char f_strings(char *s1, char *s2, char *s3) {
 		
 		for(l=0; l<s1Length; l++) 
 			output[j+k+l] = s2[l];
-
-
-		return &output;
 	}
+
+	s3=output;
 }
 
 int f_array(int n) {
