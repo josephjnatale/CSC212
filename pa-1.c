@@ -118,10 +118,10 @@ int main() {
 
 		}
 
-		//not working
-		/*
+		
 		else if(problemSet==5) {
 			char pattern[10], text[50];
+			char *pPattern=pattern, *pText=text;
 
 			printf("\nEnter the pattern: ");
 			scanf("%s", &pattern);
@@ -129,10 +129,10 @@ int main() {
 			printf("\nEnter the text you which to cross check: \n");
 			scanf("%s", &text);
 
-			printf("\nTimes pattern is shown in text: %i", f_str_search(*pattern, *text));
+			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
 		}
-		*/
+		
 
 		else if(problemSet==6) {
 
@@ -464,6 +464,7 @@ int f_rotate(int n, int r) {
 
 	int size=floor(log10(n))+1, number[size], index, temp=n, counter;
 
+	//if rotated more than size, will move the same as r%size;
 	if(r>=size)
 		r%=size;
 	//places each digit into the array
