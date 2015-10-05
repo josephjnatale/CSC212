@@ -525,7 +525,7 @@ bool f_perfect(int n) {
 	int total=0, temp;
 
 	temp=n;
-	printf("\n");
+	//printf("\n");
 	while(temp!=0) {
 
 		if(temp<=1)
