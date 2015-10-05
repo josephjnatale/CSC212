@@ -120,7 +120,7 @@ int main() {
 
 		
 		else if(problemSet==5) {
-			char pattern[10]={0}, text[50]{0};
+			char pattern[10], text[50];
 			char *pPattern=pattern, *pText=text;
 
 			printf("\nEnter the pattern: ");
