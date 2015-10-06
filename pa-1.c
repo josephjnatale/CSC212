@@ -293,7 +293,7 @@ void f_sort (int x, int y, int z, int *numbers) {
 		}
 	}
 
-	for(int i=0; i<=3; i++) {
+	for(int i=2; i=0; i--) {
 		printf("%d, ", list[i]);
 	}
 
