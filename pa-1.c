@@ -189,7 +189,7 @@ int main() {
 			f_sort(n1,n2,n3, pointer);
 
 			for(int i=0; i<=3; i++)
-				printf("%d", sorted[i]);
+				printf("%d, ", sorted[i]);
 
 		}
 
