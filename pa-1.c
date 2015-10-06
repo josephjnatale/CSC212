@@ -124,10 +124,10 @@ int main() {
 			char *pPattern=pattern, *pText=text;
 
 			printf("\nEnter the pattern: ");
-			scanf("%[^\t\n]s", pattern);
+			scanf("%[^\n]%*c", pattern);
 
 			printf("\nEnter the text you which to cross check: \n");
-			scanf("%[^\t\n]s", text);
+			scanf("%[^\n]%*c", text);
 
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
@@ -167,7 +167,9 @@ int main() {
 			char *p1=s1, *p2=s2, *p3=s3;
 			f_strings(p1,p2,p3);
 
-			printf("\n\n%s", s3);
+			for(int i=0; i<=strlen(s3); i++) {
+
+			}
 		}
 
 		else if(problemSet==9) {
