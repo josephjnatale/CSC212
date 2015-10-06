@@ -436,30 +436,11 @@ int f_collatz_count(int n) {
 
 int f_str_search(char *pattern, char *text) {
 	
-	int textLength=strlen(text), patternLength=strlen(pattern), index, counter=0;
-
-	printf("\npattern= %c", *pattern);
-	
-	printf("\ntext= %s", text);
-	printf("\ntext length: %i\n\n\nfirst character of key: %s\n", textLength, &pattern[0]);
-
-	for(index=0; index<=textLength; index++) {
-		printf("Checking index %i for the character: ",index);
-		printf("%s\n", &pattern[0]);
-
-		if(text[index]==pattern[0])
-		{
-			printf("there is a %s at index: %i\nchecking following numbers\n",&pattern[0], index+1);
-			for(int k=1; k<=patternLength; k++) {
-				if(text[index+k]!=pattern[k])
-					break;
-
-				counter++;
-			}
-		}
+	if(*pattern==*text){
+		printf("YASSS");
 	}
 
-	return counter;
+	return 0;
 
 }
 
