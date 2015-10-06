@@ -168,7 +168,7 @@ int main() {
 			f_strings(p1,p2,p3);
 
 			for(int i=0; i<=strlen(s3); i++) {
-
+				printf("%c", *(s3+i));
 			}
 		}
 
