@@ -129,7 +129,7 @@ int main() {
 			printf("\nEnter the text you which to cross check: \n");
 			scanf("%50[^\n]s", text);
 
-			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
+			//printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
 		}
 		
