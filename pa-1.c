@@ -436,13 +436,13 @@ int f_collatz_count(int n) {
 
 int f_str_search(char *pattern, char *text) {
 	
-	int key_length=
-	for()
-	if(*pattern==*text){
+	// int key_length=
+	// for()
+	// if(*pattern==*text){
 
-	}
+	// }
 
-	return 0;
+	// return 0;
 
 }
 
