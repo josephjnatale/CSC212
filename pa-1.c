@@ -436,8 +436,10 @@ int f_collatz_count(int n) {
 
 int f_str_search(char *pattern, char *text) {
 	
+	int key_length=
+	for()
 	if(*pattern==*text){
-		printf("YASSS");
+
 	}
 
 	return 0;
@@ -539,7 +541,7 @@ bool f_brackets(char *e) {
 	int j=0,LBcount=0, RBcount=0, length=strlen(e);
 
 
-	if(length==1)
+	if(length==1 || e[0]==rightBracket)
 		return false;
 
 	while(j != length) {
