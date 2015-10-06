@@ -124,10 +124,10 @@ int main() {
 			char *pPattern=pattern, *pText=text;
 
 			printf("\nEnter the pattern: ");
-			scanf("%[^\n]%*c", pattern);
+			fgets(pattern, 10, stdin);
 
 			printf("\nEnter the text you which to cross check: \n");
-			scanf("%[^\n]%*c", text);
+			fgets(text, 50, stdin);
 
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
