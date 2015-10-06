@@ -321,9 +321,9 @@ void f_strings(char *s1, char *s2, char *s3) {
 		for(l=0; l<s1Length; l++) 
 			output[j+k+l] = s1[l];
 
-		printf("%s", s3);
-		s3=output;
 
+		s3=output;
+		printf("%s", s3);
 	}
 
 	else {
@@ -340,8 +340,9 @@ void f_strings(char *s1, char *s2, char *s3) {
 		for(l=0; l<s1Length; l++) 
 			output[j+k+l] = s2[l];
 
-		printf("%s", s3);
+		
 		s3=output;
+		printf("%s", s3);
 	}
 
 }
