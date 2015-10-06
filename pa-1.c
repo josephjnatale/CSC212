@@ -188,7 +188,7 @@ int main() {
 
 			f_sort(n1,n2,n3, pointer);
 
-			for(int i=0; i==2; i++)
+			for(int i=0; i<3; i++)
 				printf("%d, ", sorted[i]);
 
 		}
@@ -293,9 +293,9 @@ void f_sort (int x, int y, int z, int *numbers) {
 		}
 	}
 
-	for(int i=2; i==0; i--) {
-		printf("%d, ", list[i]);
-	}
+	// for(int i=2; i==0; i--) {
+	// 	printf("%d, ", list[i]);
+	// }
 
 	*(numbers)=list[2];
 	*(numbers+1)=list[1];
