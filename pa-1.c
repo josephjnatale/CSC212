@@ -74,14 +74,7 @@ int main() {
 			int test;
 			printf("Perfect number? Check: ");
 			scanf("%i", &test);
-
 		
-			//for entering your own number	
-			int input;
-			scanf("%d", &input);
-			printf("\nPlease Enter a number: ");
-
-			
 			printf("\n\n");
 			printf("Is %i", test);
 			printf(" a pefect number?");
@@ -116,7 +109,7 @@ int main() {
 			printf("\nEnter the text you which to cross check: \n");
 			scanf("%s", text);
 
-			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
+			printf("\n**NOT CURRENTLY WORKING, DID NOT HAVE ENOUGH TIME TO FIX BUG**\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
 		}
 		
