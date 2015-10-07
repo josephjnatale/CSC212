@@ -36,8 +36,9 @@ int main() {
 		
 			//for entering your own number	
 			int input;
-			scanf("%d", &input);
+			
 			printf("\nPlease Enter a number: ");
+			scanf("%d", &input);
 			printf("\n\n");
 			printf("Is ");
 			printf("%d", input);
