@@ -40,7 +40,7 @@ int main() {
 			printf("\nPlease Enter a number: ");
 			printf("\n\n");
 			printf("Is ");
-			printf("%d", a);
+			printf("%d", input);
 			printf(" a Armstrong number?");
 
 			if(f_armstrong(input))
