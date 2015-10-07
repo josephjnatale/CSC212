@@ -185,7 +185,7 @@ int main() {
 			if(p[0]!=0 && p[1]!=0)
 				printf("\nNumbers that work: %d , %d", p[0], p[1]);
 			else
-				printf("\nNumbers that work: NULL, NULL);
+				printf("\nNumbers that work: NULL, NULL");
 
 		}
 
