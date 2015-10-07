@@ -111,7 +111,7 @@ int main() {
 
 			
 			printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
-			printf("\n**NOT CURRENTLY WORKING, DID NOT HAVE ENOUGH TIME TO FIX THE BUG**");
+			printf("\n**NOT WORKING, NOT SURE WHY, DID NOT HAVE ENOUGH TIME TO FIX THE BUG**");
 
 		}
 		
