@@ -236,8 +236,7 @@ int *f_cubes_sum (int n) {
 
 			printf("\tNo %d", (int)(pow(i,3)+pow(j,3)));
 			if(pow(i,3)+pow(j,3)>n){
-				p=NULL;
-				return p;
+				break;
 			}
 		}
 			
