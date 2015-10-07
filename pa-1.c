@@ -33,28 +33,22 @@ int main() {
 		scanf("%i", &problemSet);
 
 		if(problemSet==1) {
-		// Armstrong number test
+		
+			//for entering your own number	
+			int input;
+			scanf("%d", &input);
+			printf("\nPlease Enter a number: ");
+			printf("\n\n");
+			printf("Is ");
+			printf("%d", a);
+			printf(" a Armstrong number?");
 
-			int a=0;
-
-			//checks all possible number between 1 and 100000 prints only if it is a armstrong number
-			while(a!=100000){
-
-				//for entering your own number	
-				int input;
-				scanf("%d", &input);
-				printf("\nPlease Enter a number: ");
-				printf("\n\n");
-				printf("Is ");
-				printf("%d", a);
-				printf(" a Armstrong number?");
-
-				if(f_armstrong(input))
-					printf("\t YES");
-				
-				else 
-					printf("\t NO");
-			}
+			if(f_armstrong(input))
+				printf("\t YES");
+			
+			else 
+				printf("\t NO");
+			
 		}
 		
 		else if(problemSet==2) {
