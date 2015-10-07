@@ -41,19 +41,19 @@ int main() {
 			while(a!=100000){
 
 				//for entering your own number	
-				//int input;
-				//scanf("%d", &input);
-				//printf("\nPlease Enter a number: ");
+				int input;
+				scanf("%d", &input);
+				printf("\nPlease Enter a number: ");
+				printf("\n\n");
+				printf("Is ");
+				printf("%d", a);
+				printf(" a Armstrong number?");
 
-				if(f_armstrong(a))	{
-					printf("\n\n");
-					printf("Is ");
-					printf("%d", a);
-					printf(" a Armstrong number?");
-						
+				if(f_armstrong(input))
 					printf("\t YES");
-				}
-				a++;
+				
+				else 
+					printf("\t NO");
 			}
 		}
 		
@@ -77,35 +77,25 @@ int main() {
 		else if(problemSet==3) {
 			
 			int test;
-			//printf("Perfect number? Check: ");
-			//scanf("%i", &test);
+			printf("Perfect number? Check: ");
+			scanf("%i", &test);
 
-			while(test!=100000){
-
-				//for entering your own number	
-				//int input;
-				//scanf("%d", &input);
-				//printf("\nPlease Enter a number: ");
-
-				if(f_perfect(test))	{
-					printf("\n\n");
-					printf("Is %i", test);
-					printf(" a pefect number?");
-						
-					printf("\t YES");
-				}
-				test++;
-			}	
-
+		
+			//for entering your own number	
+			int input;
+			scanf("%d", &input);
+			printf("\nPlease Enter a number: ");
 
 			
-			
+			printf("\n\n");
+			printf("Is %i", test);
+			printf(" a pefect number?");
+		
+			if(f_perfect(test))
+				printf("\t YES \n");
 
-			// if(f_perfect(test))
-			// 	printf("\t YES \n");
-
-			// else
-			// 	printf("\t NO \n");
+			else
+				printf("\t NO \n");
 		}
 
 		else if(problemSet==4) {
