@@ -109,7 +109,8 @@ int main() {
 			printf("\nEnter the text you which to cross check: \n");
 			scanf("%s", text);
 
-			printf("\n**NOT CURRENTLY WORKING, DID NOT HAVE ENOUGH TIME TO FIX BUG**\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
+			printf("\n**NOT CURRENTLY WORKING, DID NOT HAVE ENOUGH TIME TO FIX THE BUG**");
+			//printf("\nTimes pattern is shown in text: %i", f_str_search(pPattern, pText));
 
 		}
 		
