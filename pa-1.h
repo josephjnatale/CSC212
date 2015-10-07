@@ -41,11 +41,13 @@ int *f_cubes_sum (int n) {
 	}
 
 	if(comboFound) {
-		p=numbers;\
+		p=numbers;
 		return p;
 	}
 	else {
-		p=NULL;
+		numbers[0]=NULL;
+		numbers[1]=NULL;
+		p=numbers;
 		return p;
 	}
 }
