@@ -36,8 +36,13 @@ int *f_cubes_sum (int n) {
 			break;	
 
 	}
-	p=numbers;
-	return p;
+
+	if(comboFound) {
+		p=numbers;\
+		return p;
+	}
+	else
+		return NULL;
 }
 
 
