@@ -34,6 +34,9 @@ int *f_cubes_sum (int n) {
 			
 		if(comboFound)
 			break;	
+		if(pow(i,3)>n){
+				break;
+			}
 
 	}
 
