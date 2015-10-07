@@ -45,8 +45,8 @@ int *f_cubes_sum (int n) {
 		return p;
 	}
 	else {
-		numbers[0]=NULL;
-		numbers[1]=NULL;
+		numbers[0]=(int)NULL;
+		numbers[1]=(int)NULL;
 		p=numbers;
 		return p;
 	}
