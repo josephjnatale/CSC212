@@ -11,13 +11,12 @@ int main() {
 	int runtimes;
 	cout<<"enter how many inputs you want: ";
 	cin>>runtimes;
-	runtimes+=1;
 	string inputs[runtimes];
 	
-	for(int j=1; j<runtimes; j++)
+	for(int j=0; j<runtimes; j++)
 		getline(cin, inputs[j]);
 
-	for(int q=0; q<=runtimes; q++) {
+	for(int q=1; q<=runtimes+1; q++) {
 	
 		int contains[26]={0};
 		transform(inputs[q].begin(), inputs[q].end(), inputs[q].begin(), ::tolower);
@@ -28,15 +27,16 @@ int main() {
 			for(int j=0; j<26; j++) {
 
 				if(inputs[q].at(i)==letters[j])
-					contains[j]+=1;
+					contains[j]++;
 			
 			}
-
 
 		}
 
 		for(int k=0; k<26; k++)
 			cout<<contains[k]<<", ";
+
+		cout<<endl;
 
 		bool doublePangram=false, triplePangram=false,  pangram=false;
 
@@ -73,13 +73,13 @@ int main() {
 
 
 		if(triplePangram==true)
-			cout<<"Case "<<q<<": Triple Pangram!!!";
+			cout<<"Case "<<q<<": Triple Pangram!!!"<<endl;
 		else if(doublePangram==true)
-			cout<<"Case "<<q<<": Double pangram!!";
+			cout<<"Case "<<q<<": Double pangram!!"<<endl;
 		else if(pangram==true)
-			cout<<"Case "<<q<<": Pangram!";
+			cout<<"Case "<<q<<": Pangram!"<<endl;
 		else
-			cout<<"Cas "<<q<<": Not a pangram";
+			cout<<"Case "<<q<<": Not a pangram"<<endl;
 
 	}
 
