@@ -19,7 +19,7 @@ int main() {
 		getline(cin, inputs[j]);
 	}
 
-	for(int q=0; q<=runtimes; q++) {
+	for(int q=0; q<runtimes; q++) {
 	
 		int contains[26]={0};
 		transform(inputs[q].begin(), inputs[q].end(), inputs[q].begin(), ::tolower);
