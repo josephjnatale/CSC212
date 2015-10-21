@@ -35,7 +35,7 @@ int main() {
 
 		}
 
-		or(int k=0; k<26; k++)
+		for(int k=0; k<26; k++)
 			cout<<contains[k]<<", ";
 
 		cout<<endl;
