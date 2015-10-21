@@ -11,12 +11,12 @@ int main() {
 	int runtimes;
 	cout<<"enter how many inputs you want: ";
 	cin>>runtimes;
-	string inputs[runtimes];
+	string inputs[runtimes+1];
 	
 	for(int j=0; j<runtimes; j++)
 		getline(cin, inputs[j]);
 
-	for(int q=1; q<=runtimes+1; q++) {
+	for(int q=1; q<=runtimes; q++) {
 	
 		int contains[26]={0};
 		transform(inputs[q].begin(), inputs[q].end(), inputs[q].begin(), ::tolower);
