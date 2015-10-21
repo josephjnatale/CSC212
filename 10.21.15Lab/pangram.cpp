@@ -36,10 +36,7 @@ int main() {
 
 		}
 
-		for(int k=0; k<26; k++)
-			cout<<contains[k]<<", ";
-
-		cout<<endl;
+		
 
 		bool doublePangram=false, triplePangram=false,  pangram=false;
 
