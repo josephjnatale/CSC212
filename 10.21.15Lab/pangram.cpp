@@ -12,7 +12,7 @@ int main() {
 	int runtimes;
 	cout<<"enter how many inputs you want: ";
 	cin>>runtimes;
-	string inputs[runtimes+1];
+	string inputs[runtimes];
 	
 	for(int j=0; j<runtimes; j++){
 		cin.ignore();
