@@ -12,6 +12,7 @@ int main() {
 	cout<<"enter how many inputs you want: ";
 	cin>>runtimes;
 	string inputs[runtimes+1];
+	cin.ignore(256, "\n");
 	
 	for(int j=0; j<runtimes; j++)
 		getline(cin, inputs[j]);
