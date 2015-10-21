@@ -10,9 +10,8 @@ int main() {
 	char letters[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 	int runtimes;
 	cout<<"enter how many inputs you want: ";
-	cin>>runtimes;
+	getline(cin, runtimes);
 	string inputs[runtimes+1];
-	cin.ignore(256, "\n");
 	
 	for(int j=0; j<runtimes; j++)
 		getline(cin, inputs[j]);
