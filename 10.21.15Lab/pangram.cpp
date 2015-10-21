@@ -67,7 +67,7 @@ int main() {
 			for(int k=0; k<26; k++) {
 
 				if(contains[k]==2){
-					cout<<""
+					
 					break;
 				}
 
