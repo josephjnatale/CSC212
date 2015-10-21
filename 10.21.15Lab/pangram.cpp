@@ -12,12 +12,12 @@ int main() {
 	int runtimes;
 	cout<<"enter how many inputs you want: ";
 	cin>>runtimes;
-	cin.clear();
-	cin.ignore(numeric_limits<streamsize>::max(),'\n') ;
 	string inputs[runtimes+1];
 	
-	for(int j=0; j<runtimes; j++)
+	for(int j=0; j<runtimes; j++){
+		cin.ignore();
 		getline(cin, inputs[j]);
+	}
 
 	for(int q=1; q<=runtimes; q++) {
 	
