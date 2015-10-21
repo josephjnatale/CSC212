@@ -10,7 +10,6 @@ int main() {
 
 	char letters[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 	int runtimes;
-	cout<<"enter how many inputs you want: ";
 	cin>>runtimes;
 	string inputs[runtimes];
 	
@@ -36,7 +35,10 @@ int main() {
 
 		}
 
-		
+		or(int k=0; k<26; k++)
+			cout<<contains[k]<<", ";
+
+		cout<<endl;
 
 		bool doublePangram=false, triplePangram=false,  pangram=false;
 
@@ -64,8 +66,10 @@ int main() {
 		if(doublePangram==true)
 			for(int k=0; k<26; k++) {
 
-				if(contains[k]==2)
+				if(contains[k]==2){
+					cout<<""
 					break;
+				}
 
 				if(k==25 && contains[k]>2)
 					triplePangram=true;
@@ -73,13 +77,13 @@ int main() {
 
 
 		if(triplePangram==true)
-			cout<<"Case "<<q<<": Triple Pangram!!!"<<endl;
+			cout<<"Case "<<q+1<<": Triple pangram!!!"<<endl;
 		else if(doublePangram==true)
-			cout<<"Case "<<q<<": Double pangram!!"<<endl;
+			cout<<"Case "<<q+1<<": Double pangram!!"<<endl;
 		else if(pangram==true)
-			cout<<"Case "<<q<<": Pangram!"<<endl;
+			cout<<"Case "<<q+1<<": Pangram!"<<endl;
 		else
-			cout<<"Case "<<q<<": Not a pangram"<<endl;
+			cout<<"Case "<<q+1<<": Not a pangram"<<endl;
 
 	}
 
