@@ -87,7 +87,7 @@ bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
             address= used_list.back()->get_addr();
 
             //allocation successful
-            reutrn true;
+            return true;
         }
 
         //if not exact size find the smallest block that could house b
