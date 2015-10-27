@@ -49,7 +49,7 @@ bool MemManager::alloc_first_fit(uint32_t b, uint32_t &address) {
             // 2) create a new block and insert it into the used list
             used_list.push_back(new MemBlock(free_list[i]->get_addr()+free_list[i]->get_size(),b));
             // 3) remember to update the output argument 'address'
-            address = used_list.back()->get_addr();
+            
             // returns that allocation was OK
             return true;
         } else if (b == free_list[i]->get_size()) {
@@ -72,8 +72,7 @@ bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
     // you will have to complete this function
 
     //address of smallest memory block
-    uint32_t smallestBlock=10000000000;
-    uint32_t &addressOfSmallestBlock;
+    uint32_t indexOfSmallestBlock;
 
     //search every block in free list, if one fits the bytes requested then swap them, if not find the smallest block that fits b.
     for(int i=0; i < free_list.size(); i++) {
@@ -93,15 +92,23 @@ bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
 
         //if not exact size find the smallest block that could house b
         //if the block at i is smaller than the smallestblock found so far set the block at i to smallest block
-        else if(free_list[i]->get_size() < smallestBlock && free_list[i]->get_size() > b) {
+        else if(free_list[i]->get_size() < free_list[indexOfSmallestBlock]->get_size() && free_list[i]->get_size() > b) {
 
-            smallestBlock = free_list[i]->get_size();
-            addressOfSmallestBlock=free_list[i];       
+            indexOfSmallestBlock=i;      
         }
     }
 
     //if it made it to here then there are no block that fit it exactly, however it has found the smallest block that could houses the requested bytes
-    
+    if(free_list[indexOfSmallestBlock]-> get_size()>b) {
+
+        //shrinks the index of the best fit to house b
+        free_list[indexOfSmallestBlock]->shrink_by(b);
+        //create new block in used list
+        used_list.push_back(new MemBlock(free_list[indexOfSmallestBlock]->get_addr()+free_list[indexOfSmallestBlock]->get_size(),b));
+        
+        //everything went smoothly
+        return true;
+    }
     return false;
 }
 
