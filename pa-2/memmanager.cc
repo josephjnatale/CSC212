@@ -70,6 +70,38 @@ bool MemManager::alloc_first_fit(uint32_t b, uint32_t &address) {
 
 bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
     // you will have to complete this function
+
+    //address of smallest memory block
+    uint32_t smallestBlock=10000000000;
+    uint32_t &addressOfSmallestBlock;
+
+    //search every block in free list, if one fits the bytes requested then swap them, if not find the smallest block that fits b.
+    for(int i=0; i < free_list.size(); i++) {
+
+        //byes requested is the same size as the memory block, always best fit
+        if(b==free_list[i]->get_size()) {
+            //move block memory from free list to used list
+            used_list.push_back(free_list[i]);
+            //release memory from free list
+            free_list.erase(free_list.begin()+i);
+            //update address
+            address= used_list.back()->get_addr();
+
+            //allocation successful
+            reutrn true;
+        }
+
+        //if not exact size find the smallest block that could house b
+        //if the block at i is smaller than the smallestblock found so far set the block at i to smallest block
+        else if(free_list[i]->get_size() < smallestBlock && free_list[i]->get_size() > b) {
+
+            smallestBlock = free_list[i]->get_size();
+            addressOfSmallestBlock=free_list[i];       
+        }
+    }
+
+    //if it made it to here then there are no block that fit it exactly, however it has found the smallest block that could houses the requested bytes
+    
     return false;
 }
 
