@@ -11,7 +11,7 @@ DLList::~DLList() {
 
 }
 
-void destroyList(){
+void DLList::destroyList(){
 	MemBlock *tail = prv;
 	while(tail!= NULL) {
 		MemBlock *tail2 = tail;
@@ -22,7 +22,7 @@ void destroyList(){
 	tail=NULL;
 }
 
-void addAtHead(MemBlock* node) {
+void DLList::addAtHead(MemBlock* node) {
 
 	//set the first memblocks previous node to new node
 	head->prev=node->address;
@@ -32,7 +32,7 @@ void addAtHead(MemBlock* node) {
 	head=node;
 }
 
-void addAtTail(MemBlock* node) {
+void DLList::addAtTail(MemBlock* node) {
 
 	//sets tails next to node
 	tail->nxt=node->address;
@@ -44,7 +44,7 @@ void addAtTail(MemBlock* node) {
 	tail=node->address;
 }
 
-void removeNodeWithAddress(uint32_t address, MemBlock* node) {
+void DLList::removeNodeWithAddress(uint32_t address, MemBlock* node) {
 
 	//if the node is not Null go into if, it it is null do nothing.
 	if(node){
@@ -64,7 +64,7 @@ void removeNodeWithAddress(uint32_t address, MemBlock* node) {
 
 }
 
-void printNodes(MemBlock* node) {
+void DLList::printNodes(MemBlock* node) {
 
 	//when the node does not equal NULL
 	if(node) {
