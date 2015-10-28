@@ -13,10 +13,10 @@ DLList::~DLList() {
 }
 
 void DLList::destroyList(){
-	MemBlock *t = tail->prev;
+	MemBlock *t = tail->prv;
 	while(t) {
 		MemBlock *t2 = t;
-		t = t->prev;
+		t = t->prv;
 		delete t2;
 	}
 	head=NULL;
@@ -25,8 +25,8 @@ void DLList::destroyList(){
 
 void DLList::addAtHead(MemBlock* node) {
 
-	//set the first memblocks previous node to new node
-	head->prev=node->address;
+	//set the first memblocks prvious node to new node
+	head->prv=node->address;
 	//set new nodes next to heads address
 	node->nxt=head->address;
 	//set head to new node
@@ -37,8 +37,8 @@ void DLList::addAtTail(MemBlock* node) {
 
 	//sets tails next to node
 	tail->nxt=node->address;
-	//set nodes prev to tails address
-	node->prev=tail->address;
+	//set nodes prv to tails address
+	node->prv=tail->address;
 	//set nodes next equal to null
 	node->nxt=NULL;
 	//set tail to new node
@@ -50,10 +50,10 @@ void DLList::removeNodeWithAddress(uint32_t address, MemBlock* node) {
 	//if the node is not Null go into if, it it is null do nothing.
 	if(node){
 		if(node->address==adress){
-			//previous nodes nxt equals the next node
-			node->prev->nxt=node->nxt;
-			//the next nodes prev equals the previous node
-			node->nxt->prev=node->prev;
+			//prvious nodes nxt equals the next node
+			node->prv->nxt=node->nxt;
+			//the next nodes prv equals the prvious node
+			node->nxt->prv=node->prv;
 			delete node;
 			break;
 		}
