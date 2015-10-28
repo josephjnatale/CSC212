@@ -1,6 +1,7 @@
 #include "dllist.h"
 
 DLList::DLList() {
+
     head=NULL;
     tail=NULL;
 
@@ -12,7 +13,7 @@ DLList::~DLList() {
 }
 
 void DLList::destroyList(){
-	MemBlock *t = prv;
+	MemBlock *t = tail->prv;
 	while(t!= NULL) {
 		MemBlock *t2 = t;
 		t = t->prev;
