@@ -13,8 +13,8 @@ DLList::~DLList() {
 }
 
 void DLList::destroyList(){
-	MemBlock *t = tail->prv;
-	while(t!= NULL) {
+	MemBlock *t = tail->prev;
+	while(t) {
 		MemBlock *t2 = t;
 		t = t->prev;
 		delete t2;
@@ -53,7 +53,7 @@ void DLList::removeNodeWithAddress(uint32_t address, MemBlock* node) {
 			//previous nodes nxt equals the next node
 			node->prev->nxt=node->nxt;
 			//the next nodes prev equals the previous node
-			node->nxt->prev=node-prev;
+			node->nxt->prev=node->prev;
 			delete node;
 			break;
 		}
