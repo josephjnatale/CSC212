@@ -17,7 +17,7 @@ class MemBlock {
         MemBlock *prv;
 
     public:
-        MemBlock(uint32_t a, uint32_t s) { address = a; size = s; prv=nxt=NULL; }
+        MemBlock(uint32_t a, uint32_t s) { address = a; size = s; prv =NULL; nxt =NULL; }
         ~MemBlock() {}
 
         void shrink_by(uint32_t s) { size -= s; }
