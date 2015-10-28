@@ -9,14 +9,14 @@
 // linked list, so the pointers can be accessed (adjusted) from outside the class.
 class MemBlock {
 
-    private:
+    public:
         uint32_t address;
         uint32_t size;
 
         MemBlock *nxt;
         MemBlock *prv;
 
-    public:
+    
         MemBlock(uint32_t a, uint32_t s) { address = a; size = s; prv =NULL; nxt =NULL; }
         ~MemBlock() {}
 
@@ -30,11 +30,11 @@ class MemBlock {
 
 class DLList {
 
-    private:
+    public:
         MemBlock *head;
         MemBlock *tail;
 
-    public:
+    
         DLList();
         ~DLList();
 
