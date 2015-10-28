@@ -1,5 +1,4 @@
 #include "dllist.h"
-friend class DLList;
 
 DLList::DLList() {
     nxt=NULL;

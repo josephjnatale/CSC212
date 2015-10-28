@@ -16,8 +16,8 @@ class MemManager {
         // lists
         // you will create a separate class for its implementation including
         // methods to add, remove and traverse its nodes
-        DLList free_list = new DLList();
-        DLList used_list = new DLList();
+        DLList free_list;
+        DLList used_list;
 
     public:
         // constructor: requires an integer with the size of memory available
