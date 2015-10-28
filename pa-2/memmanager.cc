@@ -9,14 +9,11 @@ MemManager::MemManager(uint32_t m) {
 }
 
 MemManager::~MemManager() {
-    // traverse the free list and remove nodes
-    for (int i = 0 ; i < free_list.size() ; i++) {
-        delete free_list[i];
+    // Destroy the free list
+    free_list->destroyList();
     }
-    // traverse the used list and remove nodes
-    for (int i = 0 ; i < used_list.size() ; i++) {
-        delete used_list[i];
-    }
+    // Destroy the used list
+    used_list->destroyList();
 }
 
 void MemManager::coalesce() {
@@ -25,14 +22,13 @@ void MemManager::coalesce() {
 
 void MemManager::display() {
     // traverse and print details of the list of free blocks
-    for (int i = 0 ; i < free_list.size() ; i++) {
-        std::cout << free_list[i]->get_size() << "@" << free_list[i]->get_addr() << " -> ";
-    }
+    free_list->printNodes(free_list->head);
+
     std::cout << "|" << std::endl;
+
     // traverse and print details of the list of used blocks
-    for (int i = 0 ; i < used_list.size() ; i++) {
-        std::cout << used_list[i]->get_size() << "@" << used_list[i]->get_addr() << " -> ";
-    }
+    used_list->printNodes(used_list->head);
+
     std::cout << "|" << std::endl;
 }
 
@@ -95,6 +91,7 @@ bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
         else if(free_list[i]->get_size() < free_list[indexOfSmallestBlock]->get_size() && free_list[i]->get_size() > b) {
 
             indexOfSmallestBlock=i;      
+
         }
     }
 

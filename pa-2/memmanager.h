@@ -16,8 +16,8 @@ class MemManager {
         // lists
         // you will create a separate class for its implementation including
         // methods to add, remove and traverse its nodes
-        std::vector<MemBlock *> free_list;
-        std::vector<MemBlock *> used_list;
+        DLList free_list = new DLList();
+        DLList used_list = new DLList();
 
     public:
         // constructor: requires an integer with the size of memory available
@@ -40,5 +40,6 @@ class MemManager {
         bool free_memory(uint32_t address);
 
 };
+
 
 #endif

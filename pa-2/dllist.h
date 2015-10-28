@@ -17,7 +17,7 @@ class MemBlock {
         MemBlock *prv;
 
     public:
-        MemBlock(uint32_t a, uint32_t s) { address = a; size = s; }
+        MemBlock(uint32_t a, uint32_t s) { address = a; size = s; prv=nxt=NULL; }
         ~MemBlock() {}
 
         void shrink_by(uint32_t s) { size -= s; }
@@ -39,6 +39,12 @@ class DLList {
         ~DLList();
 
         // insert your functions here
+        void destroyList();
+        void addAtHead(MemBlock* node);
+        void addAtTail(MemBlock* node);
+        void removeNodeWithAddress(uint32_t address,MemBlock* node);
+        void printNodes();
+
 };
 
 #endif
