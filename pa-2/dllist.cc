@@ -13,7 +13,7 @@ DLList::~DLList() {
 }
 
 void DLList::destroyList(){
-	MemBlock *t = tail->prv;
+	MemBlock *t = tail;
 	while(t) {
 		MemBlock *t2 = t;
 		t = t->prv;

@@ -25,6 +25,7 @@ class MemBlock {
         uint32_t get_size() { return size; }
 
     friend class DLList;
+    //
 
 };
 
