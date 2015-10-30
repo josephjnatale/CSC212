@@ -135,7 +135,7 @@ MemBlock *DLList::find_by_address(uint32_t a) {
 // I am using double pointers to write less code.
 // You dont have to -- insertions in order are easier
 // to implement when you deal with doubly linked lists
-void LList::insert(uint32_t a, uint32_t s) {
+void DLList::insert(uint32_t a, uint32_t s) {
     // find insertion point using double pointers
     MemBlock **p = &head;
     while (*p && (*p)->address < a) {
@@ -153,7 +153,7 @@ void LList::insert(uint32_t a, uint32_t s) {
 } 
 
 // create a new node and append it to the end of the list
-void LList::push_back(uint32_t a, uint32_t s) {
+void DLList::push_back(uint32_t a, uint32_t s) {
     MemBlock *p = new MemBlock(a, s);
     if (!head) {
         head = tail = p;
