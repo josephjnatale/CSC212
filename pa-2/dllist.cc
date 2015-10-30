@@ -68,15 +68,18 @@ MemBlock *DLList::find_best_fit(uint32_t b) {
         }
         p = p->nxt;
     }
-	std::cout<<"made it here 2 \n "<<best_fit->size<<std::endl;
+	std::cout<<"made it here 2 "<<std::endl;
     //start back at the beginning
     p=head;
 
     //find smallest used block that would work
     while(p) {
     	//if b is larger than p->size and p->size is smaller than best_fit-> then p is a better fit then best_fit
-    	if(b < p->size && (best_fit->size < p->size)) {
-    		best_fit=p;
+    	if(b < p->size){
+    		if(best_fit==NULL)
+    			best_fit=p; 
+    		else if(best_fit->size < p->size) 
+    			best_fit=p;
     	}
 
     	p=p->nxt;
