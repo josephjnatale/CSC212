@@ -26,7 +26,7 @@ void MemManager::coalesce() {
                 //increase current size
                 current->size+=checking->size;
                 //delete checking
-                free_list.delete(checking);
+                free_list.remove(checking);
             }
 
             //next checking
