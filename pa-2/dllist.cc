@@ -1,5 +1,29 @@
 #include "dllist.h"
 
+#include <iostream>
+
+MemBlock::MemBlock(uint32_t a, uint32_t s) {
+    address = a;
+    size = s;
+    nxt = NULL;
+    prv = NULL;
+}
+
+MemBlock::~MemBlock() {
+}
+
+void MemBlock::shrink_by(uint32_t s) {
+    size -= s;
+}
+
+uint32_t MemBlock::get_addr() {
+    return address;
+}
+
+uint32_t MemBlock::get_size() {
+    return size;
+}
+
 DLList::DLList() {
 
     head=NULL;
@@ -8,69 +32,134 @@ DLList::DLList() {
 }
 
 DLList::~DLList() {
-   destroyList();
+     // destroy the list
+    MemBlock *p = head;
+    while (p) {
+        head = p->nxt;
+        delete p;
+        p = head;
+    }
 
 }
 
-void DLList::destroyList(){
-	MemBlock *t = tail;
-	while(t) {
-		MemBlock *t2 = t;
-		t = t->prv;
-		delete t2;
-	}
-	head=NULL;
-	tail=NULL;
-}
+MemBlock *DLList::find_best_fit(uint32_t b) {
+	
+	MemBlock *best_fit=NULL;
 
-void DLList::addAtHead(MemBlock* node) {
+	//find if any equal the size
+	MemBlock *p = head;
+    while (p) {
+        if (b == p->size) {
+            return p;
+        }
+        p = p->nxt;
+    }
 
-	//set the first memblocks prvious node to new node
-	head->prv=node->address;
-	//set new nodes next to heads address
-	node->nxt=head->address;
-	//set head to new node
-	head=node;
-}
+    //start back at the beginning
+    *p=head;
 
-void DLList::addAtTail(MemBlock* node) {
+    //find smallest used block that would work
+    while(p) {
+    	//if b is larger than p->size and p->size is smaller than best_fit-> then p is a better fit then best_fit
+    	if(b < p->size && best_fit->size < p->size) {
+    		best_fit=p;
+    	}
 
-	//sets tails next to node
-	tail->nxt=node->address;
-	//set nodes prv to tails address
-	node->prv=tail->address;
-	//set nodes next equal to null
-	node->nxt=NULL;
-	//set tail to new node
-	tail=node->address;
-}
+    	p=p->nxt;
+    }
 
-void DLList::removeNodeWithAddress(uint32_t address, MemBlock* node) {
-
-	//if the node is not Null go into if, it it is null do nothing.
-	if(node){
-		if(node->address==adress){
-			//prvious nodes nxt equals the next node
-			node->prv->nxt=node->nxt;
-			//the next nodes prv equals the prvious node
-			node->nxt->prv=node->prv;
-			delete node;
-			break;
-		}
-		//if current nodes address does not equal the one you are looking for
-		//call function again with the next node
-		else
-			removeNodeWithAddress(address, node->nxt);
-	}
+    return best_fit;
 
 }
 
-void DLList::printNodes(MemBlock* node) {
+// remove the node pointed by parameter p from the list
+// function assumes that there is a node in the list pointed by p
+// (that means the list has at least 1 node)
+// this method should be easier for DLList
+void DLList::remove(MemBlock *p) {
+    // use a double pointer for traversing the list
+    MemBlock **q = &head;
+    while (*q != p) {
+        q = &((*q)->nxt);
+    }
+    // remove node p from list
+    *q = p->nxt;
+    delete p;
+    // take care of tail
+    tail = head;
+    while (tail && tail->nxt) {
+        tail = tail->nxt;
+    }
+}
 
-	//when the node does not equal NULL
-	if(node) {
-		std::cout<<node->get_size()<< "@" << node->get_address << " -> ";
-		printNodes(node->nxt);
-	}
+void DLList::display() {
+    // traverse the list displaying information of every node
+    MemBlock *p = head;
+    while (p) {
+        std::cout << p->size << "@" << p->address << " -> ";
+        p = p->nxt;
+    }
+    std::cout << "|" << std::endl;
+}
+
+// this function will return a pointer to the first block in the list
+// that has size >= than the input parameter b
+// if no such a block exists, then NULL is returned 
+MemBlock *DLList::find_first_by_size(uint32_t b) {
+    MemBlock *p = head;
+    while (p) {
+        if (b <= p->size) {
+            return p;
+        }
+        p = p->nxt;
+    }
+    return NULL;
+}
+
+// this function will return a pointer to the block in the list
+// that has address equal to parameter a
+// if no such a block exists, then NULL is returned 
+MemBlock *DLList::find_by_address(uint32_t a) {
+    MemBlock *p = head;
+    while (p) {
+        if (a == p->address) {
+            return p;
+        }
+        p = p->nxt;
+    }
+    return NULL;
+}
+
+// create and insert a new node into the list
+// insertion happens in ascending order of address
+// I am using double pointers to write less code.
+// You dont have to -- insertions in order are easier
+// to implement when you deal with doubly linked lists
+void LList::insert(uint32_t a, uint32_t s) {
+    // find insertion point using double pointers
+    MemBlock **p = &head;
+    while (*p && (*p)->address < a) {
+        p = &((*p)->nxt);
+    }
+    // create the node
+    MemBlock *q = new MemBlock(a, s);
+    // adjust pointers -- make the actual insertion
+    q->nxt = *p;
+    *p = q;
+    // update tail
+    if (tail == NULL || tail->nxt ) {
+        tail = q;
+    } 
+} 
+
+// create a new node and append it to the end of the list
+void LList::push_back(uint32_t a, uint32_t s) {
+    MemBlock *p = new MemBlock(a, s);
+    if (!head) {
+        head = tail = p;
+    } else {
+        tail->nxt = p;
+        tail = p;
+    }
 }
 

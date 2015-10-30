@@ -5,15 +5,11 @@
 MemManager::MemManager(uint32_t m) {
     // makes an insertion into the 'free list'
     // this is the first memory block
-    free_list.push_back(new MemBlock(0,m));
+    free_list.push_back(0,m);
 }
 
 MemManager::~MemManager() {
-    // Destroy the free list
-    free_list->destroyList();
-    }
-    // Destroy the used list
-    used_list->destroyList();
+  
 }
 
 void MemManager::coalesce() {
@@ -21,92 +17,66 @@ void MemManager::coalesce() {
 }
 
 void MemManager::display() {
-    // traverse and print details of the list of free blocks
-    free_list->printNodes(free_list->head);
-
-    std::cout << "|" << std::endl;
-
-    // traverse and print details of the list of used blocks
-    used_list->printNodes(used_list->head);
-
-    std::cout << "|" << std::endl;
+    free_list.display();
+    used_list.display();
 }
 
 bool MemManager::alloc_first_fit(uint32_t b, uint32_t &address) {
     // this function implements allocation using the first fit strategy
-    // first we traverse the list of free blocks ...
-    for (int i = 0 ; i < free_list.size() ; i++) {
-        // we check the size and find the first where a new block can be allocated
-        if (b < free_list[i]->get_size()) {
-            // this case occurs when the free memory block is greater than the
-            // requested amount of bytes. Steps:
-            // 1) decrease the amount of available bytes
-            free_list[i]->shrink_by(b);
-            // 2) create a new block and insert it into the used list
-            used_list.push_back(new MemBlock(free_list[i]->get_addr()+free_list[i]->get_size(),b));
-            // 3) remember to update the output argument 'address'
-            
-            // returns that allocation was OK
-            return true;
-        } else if (b == free_list[i]->get_size()) {
-            // this case happens when the free memory block has the exact same
-            // size as the requested amount of bytes. Steps:
-            // 1) move the entire memory block from the free list to the used list
-            used_list.push_back(free_list[i]);
-            // 2) release the memory from the free list
-            free_list.erase(free_list.begin()+i);
-            // 3) remember to update the output argument "address"
-            address = used_list.back()->get_addr();
-            // returns that allocation was OK
-            return true;
+    // first we find the fist block that can store b bytes
+    MemBlock *first_fit = free_list.find_first_by_size(b);
+    if (first_fit) {
+        // check if this is an exact fit or not
+        if (first_fit->get_size() == b) {
+            // exact fit: move memory block from the free list to the used list
+            // calculate address for the new node 
+            address = first_fit->get_addr();
+            // insert new memory block into the used list
+            used_list.push_back(address, first_fit->get_size());
+            // remove memory block from the free list
+            free_list.remove(first_fit);
+        } else {
+            // not an exact fit: decrease the amount of available bytes
+            first_fit->shrink_by(b);
+            // calculate address for the new node 
+            address = first_fit->get_addr() + first_fit->get_size();
+            // insert a new memory block into the used list
+            used_list.push_back(address, b);
         }
+        // return that allocation was OK
+        return true;
+    } else {
+        // not enough memory in the free list
+        return false;
     }
-    return false;
 }
 
 bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
     // you will have to complete this function
 
-    //address of smallest memory block
-    uint32_t indexOfSmallestBlock;
+    //rather going to be the exact size or smallest size available
+    MemBlock *best_fit = free_list.find_best_fit(b);
+    if(best_fit) {
+        if(best_fit->get_size() == b) {
 
-    //search every block in free list, if one fits the bytes requested then swap them, if not find the smallest block that fits b.
-    for(int i=0; i < free_list.size(); i++) {
-
-        //byes requested is the same size as the memory block, always best fit
-        if(b==free_list[i]->get_size()) {
-            //move block memory from free list to used list
-            used_list.push_back(free_list[i]);
-            //release memory from free list
-            free_list.erase(free_list.begin()+i);
-            //update address
-            address= used_list.back()->get_addr();
-
-            //allocation successful
-            return true;
+             //get address of node
+            address = best_fit->get_addr();
+            //insert new memory block into the used list
+            used_list.push_back(address, best_fit->get_size());
+            //remove memory block from the free list
+            free_list.remove(best_fit);
+        }
+        else {
+            best_fit->shrink_by(b);
+            address= best_fit->get_addr()+ best_fit->get_size();
+            used_list.push_back(address, b);
         }
 
-        //if not exact size find the smallest block that could house b
-        //if the block at i is smaller than the smallestblock found so far set the block at i to smallest block
-        else if(free_list[i]->get_size() < free_list[indexOfSmallestBlock]->get_size() && free_list[i]->get_size() > b) {
-
-            indexOfSmallestBlock=i;      
-
-        }
-    }
-
-    //if it made it to here then there are no block that fit it exactly, however it has found the smallest block that could houses the requested bytes
-    if(free_list[indexOfSmallestBlock]-> get_size()>b) {
-
-        //shrinks the index of the best fit to house b
-        free_list[indexOfSmallestBlock]->shrink_by(b);
-        //create new block in used list
-        used_list.push_back(new MemBlock(free_list[indexOfSmallestBlock]->get_addr()+free_list[indexOfSmallestBlock]->get_size(),b));
-        
-        //everything went smoothly
         return true;
     }
-    return false;
+
+    else
+        return false;
 }
 
 bool MemManager::alloc_memory(uint32_t b, uint32_t &address, const std::string algo) {
@@ -123,27 +93,18 @@ bool MemManager::alloc_memory(uint32_t b, uint32_t &address, const std::string a
 }
 
 bool MemManager::free_memory(uint32_t address) {
-    // traverse the list of used memory blocks
-    for (int i = 0 ; i < used_list.size() ; i++) {
-        // if the address is found ...
-        if (used_list[i]->get_addr() == address) {
-            // first we need to find the index of the insertion point
-            // we want to keep the free list in ascending order by memory address
-            int idx = free_list.size();
-            for (int j = 0 ; j < free_list.size() ; j++) {
-                if (free_list[j]->get_addr() >= used_list[i]->get_addr()) {
-                    idx = j;
-                    break;
-                }
-            }
-            // once we have the right index, we may proceed with insertion in the
-            // free list.  Please note that we are just moving the block from one
-            // list to the other
-            free_list.insert(free_list.begin()+idx, used_list[i]);
-            // then we can delete the node from the used list
-            used_list.erase(used_list.begin()+i);
-            return true;
-        }
+     // first we find the block with the same address
+    MemBlock *block = used_list.find_by_address(address);
+    if (block) { // if block has been found
+        // insert a new node into the free list
+        // this insertion is in ascending order of address
+        free_list.insert(block->get_addr(), block->get_size());
+        // remove node from used list
+        used_list.remove(block);
+        // return that free operation is ok
+        return true;
+    } else {
+        // this address does not exist in the used list
+        return false;
     }
-    return false;
 }
