@@ -19,7 +19,7 @@ void MemManager::coalesce() {
 
     while(next) {
         //if the end of p is equal to the next address minus one then they could be combined
-        if(p->address+p->size == next->address-1) {
+        if(p->address+p->size == next->address) {
             p->size=p->size+next->size;
         }
 
