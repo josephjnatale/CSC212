@@ -15,11 +15,14 @@ MemManager::~MemManager() {
 void MemManager::coalesce() {
     // if you implement this function you earn bonus points
     MemBlock *current= free_list.head;
-    MemBlock *checking = current->nxt;
+    //starts at tail works its way to head
+    MemBlock *checking = free_list.tail;
 
     while(current->nxt) {
 
-        while(checking){
+        checking=free_list.tail;
+        
+        while(checking->address != current->address){
 
             //if the current size is equal to any other address
             if(current->size + current->address == checking->address) {
@@ -30,11 +33,11 @@ void MemManager::coalesce() {
             }
 
             //next checking
-            checking=checking->nxt;
+            checking=checking->prv;
             
         }
 
-        //next
+        //next current node
         current=current->nxt;
     }
 }
