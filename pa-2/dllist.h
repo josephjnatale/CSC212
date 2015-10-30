@@ -18,11 +18,11 @@ class MemBlock {
 
     public:
         MemBlock(uint32_t a, uint32_t s);
-        ~MemBlock() {}
+        ~MemBlock();
 
-        void shrink_by(uint32_t s) { size -= s; }
-        uint32_t get_addr() { return address; }
-        uint32_t get_size() { return size; }
+        void shrink_by(uint32_t s);
+        uint32_t get_addr();
+        uint32_t get_size();
 
     friend class DLList;
     //
