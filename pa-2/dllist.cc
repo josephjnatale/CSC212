@@ -42,6 +42,20 @@ DLList::~DLList() {
 
 }
 
+// this function will return a pointer to the first block in the list
+// that has size >= than the input parameter b
+// if no such a block exists, then NULL is returned 
+MemBlock *DLList::find_first_by_size(uint32_t b) {
+    MemBlock *p = head;
+    while (p) {
+        if (b <= p->size) {
+            return p;
+        }
+        p = p->nxt;
+    }
+    return NULL;
+}
+
 MemBlock *DLList::find_best_fit(uint32_t b) {
 	
 	MemBlock *best_fit=NULL;
@@ -61,7 +75,7 @@ MemBlock *DLList::find_best_fit(uint32_t b) {
     //find smallest used block that would work
     while(p) {
     	//if b is larger than p->size and p->size is smaller than best_fit-> then p is a better fit then best_fit
-    	if(b < p->size && best_fit->size < p->size) {
+    	if(b < p->size && (best_fit->size < p->size)) {
     		best_fit=p;
     	}
 
@@ -102,19 +116,7 @@ void DLList::display() {
     std::cout << "|" << std::endl;
 }
 
-// this function will return a pointer to the first block in the list
-// that has size >= than the input parameter b
-// if no such a block exists, then NULL is returned 
-MemBlock *DLList::find_first_by_size(uint32_t b) {
-    MemBlock *p = head;
-    while (p) {
-        if (b <= p->size) {
-            return p;
-        }
-        p = p->nxt;
-    }
-    return NULL;
-}
+
 
 // this function will return a pointer to the block in the list
 // that has address equal to parameter a
