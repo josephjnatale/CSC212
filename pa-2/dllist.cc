@@ -59,7 +59,6 @@ MemBlock *DLList::find_first_by_size(uint32_t b) {
 MemBlock *DLList::find_best_fit(uint32_t b) {
 	
 	MemBlock *best_fit=NULL;
-	std::cout<<"made it here 1"<<std::endl;
 	//find if any equal the size
 	MemBlock *p = head;
     while (p) {
@@ -68,7 +67,6 @@ MemBlock *DLList::find_best_fit(uint32_t b) {
         }
         p = p->nxt;
     }
-	std::cout<<"made it here 2 "<<std::endl;
     //start back at the beginning
     p=head;
 
@@ -85,7 +83,6 @@ MemBlock *DLList::find_best_fit(uint32_t b) {
     	p=p->nxt;
     }
 
-    std::cout<<"made it here 3"<<std::endl;
     return best_fit;
 
 }
