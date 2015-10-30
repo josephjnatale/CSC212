@@ -14,17 +14,28 @@ MemManager::~MemManager() {
 
 void MemManager::coalesce() {
     // if you implement this function you earn bonus points
-    MemBlock *p= free_list.head;
-    MemBlock *next = p->nxt;
+    MemBlock *current= free_list.head;
+    MemBlock *checking = current->nxt;
 
-    while(next) {
-        //if the end of p is equal to the next address minus one then they could be combined
-        if(p->address+p->size == next->address) {
-            p->size=p->size+next->size;
+    while(checking->next) {
+
+        while(checking){
+
+            //if the current size is equal to any other address
+            if(current->size == checking->address) {
+                //increase current size
+                current->size+=checking->size;
+                //delete checking
+                free_list.delete(checking);
+            }
+
+            //next checking
+            checking=checking->nxt;
+            
         }
 
-        p=p->nxt;
-        next= p->nxt;
+        //next
+        current=current->nxt;
     }
 }
 
