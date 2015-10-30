@@ -53,7 +53,7 @@ bool MemManager::alloc_first_fit(uint32_t b, uint32_t &address) {
 
 bool MemManager::alloc_best_fit(uint32_t b, uint32_t &address) {
     // you will have to complete this function
-    std::cout<<"made it here"<<std::endl;
+    
     //rather going to be the exact size or smallest size available
     MemBlock *best_fit = free_list.find_best_fit(b);
 
