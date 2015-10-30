@@ -17,7 +17,7 @@ void MemManager::coalesce() {
     MemBlock *current= free_list.head;
     MemBlock *checking = current->nxt;
 
-    while(checking->nxt) {
+    while(current->nxt) {
 
         while(checking){
 
