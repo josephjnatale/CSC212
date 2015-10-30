@@ -56,7 +56,7 @@ MemBlock *DLList::find_best_fit(uint32_t b) {
     }
 
     //start back at the beginning
-    *p=head;
+    p=head;
 
     //find smallest used block that would work
     while(p) {
