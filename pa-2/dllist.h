@@ -46,6 +46,7 @@ class DLList {
         MemBlock *find_first_by_size(uint32_t b);
         void remove(MemBlock *p);
         MemBlock *find_by_address(uint32_t a);
+        MemBlock *find_best_fit(uint32_t b);
 
 };
 
