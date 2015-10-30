@@ -68,7 +68,7 @@ MemBlock *DLList::find_best_fit(uint32_t b) {
         }
         p = p->nxt;
     }
-	std::cout<<"made it here 2"<<std::endl;
+	std::cout<<"made it here 2 \n "<<best_fit->get_size<<std::endl;
     //start back at the beginning
     p=head;
 
