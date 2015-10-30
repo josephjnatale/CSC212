@@ -22,7 +22,7 @@ void MemManager::coalesce() {
         while(checking){
 
             //if the current size is equal to any other address
-            if(current->size == checking->address) {
+            if(current->size + current->address == checking->address) {
                 //increase current size
                 current->size+=checking->size;
                 //delete checking
